@@ -67,8 +67,8 @@
                                 errcheck=2;
                              throw new Error("HTTP status " + response.status);
                             }
-                            return response.json();
-                            }})
+                            
+                            }return response.json();})
                             .then(
                         success => {
                             document.getElementById('message').innerHTML = 'logged in'
