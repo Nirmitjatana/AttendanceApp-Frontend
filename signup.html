@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AttendanceApp|Login</title>
+    <title>AttendanceApp|Signup</title>
 </head>
 <body>
     <form id="form">
         <p id="message"></p>
+    
+    <input class="f1" type="name" name="username" value="" placeholder="Username" required><br>
     <input class="f1" type="email" name="email" value="" placeholder="Email" required><br>
     <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
-    <input class="button3 submit" type="submit" value="Login">
+    <input class="button3 submit" type="submit" value="Signup">
     </form>
-    <button>
-    <a href="signup.html">SignUp</a></button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script>
     $(document).ready(function () {
@@ -31,7 +31,8 @@
                 //     ce=false;
                 // }
                 if (form.password.value == "" ||
-                    form.email.value == "") {
+                    form.email.value == ""||
+                    form.name.value =="") {
                     message.innerHTML = 'All fields are required'
                     ca = false;
                 } else {
@@ -45,9 +46,9 @@
                     object[key] = value;
                 });
                 console.log(JSON.stringify(object))
-                // console.log(ca,ce);
+                console.log(ca,ce);
                 if (ca & ce) {
-                    fetch('https://painhost99.herokuapp.com/user/login', {
+                    fetch('https://painhost99.herokuapp.com/user/signup', {
                         method: 'POST',
                         crossDomain: true,
                         headers: {
@@ -58,20 +59,20 @@
                     .then(function(response) {
                         console.log(response.status);
                          // Will show you the status
-                         if (!response.ok) {
-                             if(response.status==404){
+                             if(response.status==208){
                                  errcheck=1;
                              throw new Error("HTTP status " + response.status);
+                             
                             }
-                            else if(response.status==401){
+                            else if(response.status==500){
                                 errcheck=2;
                              throw new Error("HTTP status " + response.status);
                             }
                             return response.json();
-                            }})
+                            })
                             .then(
                         success => {
-                            document.getElementById('message').innerHTML = 'logged in'
+                            document.getElementById('message').innerHTML = 'Account Created'
                             document.getElementById('message').style.color = "green"
                             console.log(success)
 							for (let elem of $("#form")) {
@@ -81,11 +82,11 @@
                     ).catch(
                         error => {
                             if(errcheck==1){
-                            document.getElementById('message').innerHTML = 'User does not exist'
+                            document.getElementById('message').innerHTML = 'User already exist'
                             document.getElementById('message').style.color = "red"
                             }
                             else if(errcheck==2){
-                            document.getElementById('message').innerHTML = 'Incorrect Password!'
+                            document.getElementById('message').innerHTML = 'Server Error'
                             document.getElementById('message').style.color = "red"
                             }
                             console.log(error)
