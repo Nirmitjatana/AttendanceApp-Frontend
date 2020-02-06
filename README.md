@@ -24,7 +24,7 @@
 
 ```bash
 < clone repo >
-< open Index >
+< open Login >
 ```
 
 <br>
