@@ -15,6 +15,7 @@
     </form>
     <button>
     <a href="signup.html">SignUp</a></button>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script>
     $(document).ready(function () {
@@ -60,15 +61,18 @@
                             }return response.json();})
                             .then(
                         success => {
-                            document.getElementById('message').innerHTML = 'logged in'
-                            document.getElementById('message').style.color = "green"
+                           
                             console.log(success)
-							for (let elem of $("#form")) {
-							elem.reset()
-							}
-                        }
-                    ).catch(
-                        error => {
+							
+                            // console.log(success.auth_token)
+                            localStorage.setItem('token',success.auth_token);
+                            // console.log(localStorage.getItem('token'))
+                            if(success.admin_status == true){
+                                location.href="./Admin/admindashboard.html"
+                            }
+                            }
+                            ).catch(
+                            error => {
                             if(errcheck==1){
                             document.getElementById('message').innerHTML = 'User does not exist'
                             document.getElementById('message').style.color = "red"

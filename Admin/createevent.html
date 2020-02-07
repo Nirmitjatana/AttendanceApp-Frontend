@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Admin|Create</title>
 </head>
+
 <body>
-    
+    <form id="form">
+        <p id="message"></p>
+        <input class="f1" type="text" name="event_name" value="" placeholder="Event Name" required><br>
+        <input class="f1" type="text" name="event_description" value="" placeholder="Event description" required><br>
+        <input class="f1" type="number" name="ending_time_delta" value="" placeholder="Ending Time(in mins)"
+            required><br>
+        <input class="f1" type="number" name="location_range" value="" placeholder="Range(in m)" required><br>
+        <input class="f1" type="number" name="broadcast_choice" value="" placeholder="real time for users" required><br>
+        <input class="f1" type="number" name="otp" value="" placeholder="OTP" required><br>
+        <input class="button3 submit" type="submit" value="Create Event">
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
+    <script>
+        $(document).ready(function () {
+            ca = false;
+            $('.submit').click(function (e) {
+                e.preventDefault();
+                if (form.event_description.value == "" ||
+                    form.event_name.value == "" ||
+                    form.ending_time_delta.value == "" ||
+                    form.location_range.value == "" ||
+                    form.broadcast_choice.value == "" ||
+                    form.otp.value == "") {
+                    message.innerHTML = 'All fields are required'
+                    ca = false;
+                } else {
+                    ca = true;
+                }
+                var errcheck = 0;
+                // var jwt = 
+                // console.log(jwt);
+                console.log(localStorage.getItem('token'))
+                let formData = new FormData(form);
+                var object = {};
+                formData.forEach(function (value, key) {
+                    console.log(value)
+                    object[key] = value;
+                });
+                console.log(JSON.stringify(object))
+                if (ca) {
+                    fetch('https://painhost99.herokuapp.com/event/create', {
+                        method: 'POST',
+                        crossDomain: true,
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": localStorage.getItem('token')
+                        },
+                        body: JSON.stringify(object)
+                    })
+                        .then(function (response) {
+                            console.log(response.status);   // Will show you the status
+                            if (!response.ok) {
+                                if (response.status == 404) {
+                                    errcheck = 1;
+                                    throw new Error("HTTP status " + response.status);
+                                }
+                                else if (response.status == 401) {
+                                    errcheck = 2;
+                                    throw new Error("HTTP status " + response.status);
+                                }
+
+                            } return response.json();
+                        })
+                        .then(
+                            success => {
+                                console.log(success)
+                                // console.log(success.auth_token)
+                                // localStorage.setItem('token', success.auth_token);
+                                // console.log(localStorage.getItem('token'))
+                                location.href="../Admin/admindashboard.html"
+                            }
+                        )
+                        .catch(
+                            error => {
+                                if (errcheck == 1) {
+                                    document.getElementById('message').innerHTML = 'User does not exist'
+                                    document.getElementById('message').style.color = "red"
+                                }
+                                else if (errcheck == 2) {
+                                    document.getElementById('message').innerHTML = 'Incorrect Password!'
+                                    document.getElementById('message').style.color = "red"
+                                }
+                            }
+                        );
+                }
+            })
+        })
+    </script>
 </body>
+
 </html>
