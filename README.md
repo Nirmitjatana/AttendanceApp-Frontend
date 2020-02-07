@@ -38,7 +38,7 @@
 
 <br>
 <br>
-
+[![LinkedIn](https://img.shields.io/static/v1.svg?label=Connect&message=@Kush&color=grey&logo=linkedin&labelColor=blue&style=social)](https://www.linkedin.com/in/nirmit-jatana-6814a4188?
 <p align="center">
 	Made with :heart: by DSC VIT
 </p>
