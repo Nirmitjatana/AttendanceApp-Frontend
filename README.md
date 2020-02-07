@@ -7,7 +7,8 @@
 --- 
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
 [![HitCount](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend.svg)](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend)
-
+<br>
+[![buymeacoffee: https://www.buymeacoffee.com/tomquirk](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/tomquirk)
 ## Functionalities
 - [ ] < Progressive Web Application >
 - [ ]  < Real Time Attendence >
@@ -38,7 +39,7 @@
 
 <br>
 <br>
-[![LinkedIn](https://img.shields.io/static/v1.svg?label=Connect&message=@Kush&color=grey&logo=linkedin&labelColor=blue&style=social)](https://www.linkedin.com/in/nirmit-jatana-6814a4188?
+
 <p align="center">
 	Made with :heart: by DSC VIT
 </p>
