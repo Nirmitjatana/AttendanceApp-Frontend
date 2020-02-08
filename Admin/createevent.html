@@ -61,7 +61,7 @@
                         .then(function (response) {
                             console.log(response.status);   // Will show you the status
                             if (!response.ok) {
-                                if (response.status == 404) {
+                                if (response.status == 500) {
                                     errcheck = 1;
                                     throw new Error("HTTP status " + response.status);
                                 }
@@ -75,20 +75,17 @@
                         .then(
                             success => {
                                 console.log(success)
-                                // console.log(success.auth_token)
-                                // localStorage.setItem('token', success.auth_token);
-                                // console.log(localStorage.getItem('token'))
                                 location.href="../Admin/admindashboard.html"
                             }
                         )
                         .catch(
                             error => {
                                 if (errcheck == 1) {
-                                    document.getElementById('message').innerHTML = 'User does not exist'
+                                    document.getElementById('message').innerHTML = 'Server Error'
                                     document.getElementById('message').style.color = "red"
                                 }
                                 else if (errcheck == 2) {
-                                    document.getElementById('message').innerHTML = 'Incorrect Password!'
+                                    document.getElementById('message').innerHTML = 'YOU ARE UNAUTHORIZED'
                                     document.getElementById('message').style.color = "red"
                                 }
                             }
