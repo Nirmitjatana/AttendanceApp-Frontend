@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Admin|Pastevents</title>
+    <title>Admin|Events</title>
 </head>
 <body>
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -33,31 +34,74 @@
                 .then((res) => res.json())
                 .then((data) => {
                   let output = '';
+                  let i;
+                  let j=data.length;
+                  for(i=0;i<j;i++){
+                    output += `<div style="background-color: rgb(221, 221, 221);">
+          <p>
+            Event-name:${data[0].event_name}<br>
+            Event-description:${data[0].event_description}<br>
+            OTP:${data[0].otp}<br>
+            Date and Time:${data[0].creation_date}<br>
+          </p>
+        </div>`
+                  };
+                  document.getElementById("accordionExample").innerHTML = output;
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 //   console.log(data.event_name[2]);
-                console.log(data)
-                  var length=data.length
-                  var i; 
-                  for(i=0;i<length;i++){
-                       output += `
-                          <div class="card">
-        <div class="card-header" id="heading${data.event_name[i]}">
-          <h2 class="mb-0" style="color: rgba(255, 62, 62, 0.89);">
-            ${data.i.event_name}<h5 style="color:rgba(116, 116, 116, 0.89); font-size: small;">${data.i.otp}</h5>
-                        <h3 style="color:rgba(116, 116, 116, 0.89); font-size: medium; padding-top: 10px;">Date:${data.i.creation_date}</h3>
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${data.i.id}" aria-expanded="false" aria-controls="collapse${data.i.id}" style="float: right;">
-              Details
-            </button>
-          </h2>
-        </div>
-        <div id="collapse${data.i.id}" class="collapse" aria-labelledby="heading${data.i.id}" data-parent="#accordionExample">
-          <div class="card-body">
-            ${data.i.event_description}
-          </div>
-        </div>
-      </div> b 
-                        `;
-                    } 
-                     document.getElementById('accordionExample').innerHTML = output;
+                console.log(data[0].event_name)
+    //               var length=data.length
+    //               var i;    
+    //               for(i=0;i<length;i++){
+    //                    output += `
+    //                       <div class="card">
+    //     <div class="card-header" id="heading${data.event_name[i]}">
+    //       <h2 class="mb-0" style="color: rgba(255, 62, 62, 0.89);">
+    //         ${data.i.event_name}<h5 style="color:rgba(116, 116, 116, 0.89); font-size: small;">${data.i.otp}</h5>
+    //                     <h3 style="color:rgba(116, 116, 116, 0.89); font-size: medium; padding-top: 10px;">Date:${data.i.creation_date}</h3>
+    //         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${data.i.id}" aria-expanded="false" aria-controls="collapse${data.i.id}" style="float: right;">
+    //           Details
+    //         </button>
+    //       </h2>
+    //     </div>
+    //     <div id="collapse${data.i.id}" class="collapse" aria-labelledby="heading${data.i.id}" data-parent="#accordionExample">
+    //       <div class="card-body">
+    //         ${data.i.event_description}
+    //       </div>
+    //     </div>
+    //   </div> b 
+    //                     `;
+    //                 } 
+                    //  document.getElementById('accordionExample').innerHTML = output;
     //               }
                   
                   

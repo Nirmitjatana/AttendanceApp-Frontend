@@ -17,11 +17,48 @@
             required><br>
         <input class="f1" type="number" name="location_range" value="" placeholder="Range(in m)" required><br>
         <input class="f1" type="number" name="broadcast_choice" value="" placeholder="real time for users" required><br>
-        <input class="f1" type="number" name="otp" value="" placeholder="OTP" required><br>
+        <input class="f1" type="number" name="otp" value="" placeholder="6 digit OTP" required><br>
         <input class="button3 submit" type="submit" value="Create Event">
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
+
     <script>
+    function gettext() {
+                fetch('https://painhost99.herokuapp.com/random/otp' ,{
+                        headers: {
+                            "Authorization": localStorage.getItem('token')
+                        },
+                        })
+                .then((res) => res.json())
+                .then((data) => {
+                console.log(data)
+                });
+            }
+            gettext();
+    </script>
+    <script>
+        var latitude;
+                var longitude;
+                function getLocation() {
+                    if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition);
+                                } 
+                            }
+                function showPosition(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                    }
+                getLocation();
+                // while(!latitude){
+                //     console.log(latitude)
+                // }  
+                
+    </script>
+
+
+
+    <script>
+    
         $(document).ready(function () {
             ca = false;
             $('.submit').click(function (e) {
@@ -38,16 +75,20 @@
                     ca = true;
                 }
                 var errcheck = 0;
+                
+                    
                 // var jwt = 
                 // console.log(jwt);
-                console.log(localStorage.getItem('token'))
+                // console.log(localStorage.getItem('token'))
                 let formData = new FormData(form);
                 var object = {};
                 formData.forEach(function (value, key) {
-                    console.log(value)
+                    // console.log(value)
                     object[key] = value;
                 });
-                console.log(JSON.stringify(object))
+                object["latitude"] = latitude;
+                object["longitude"] = longitude;
+
                 if (ca) {
                     fetch('https://painhost99.herokuapp.com/event/create', {
                         method: 'POST',
@@ -69,13 +110,22 @@
                                     errcheck = 2;
                                     throw new Error("HTTP status " + response.status);
                                 }
+                                else if (response.status == 406) {
+                                    errcheck = 3;
+                                    throw new Error("HTTP status " + response.status);
+                                }
+                                else if (response.status == 400) {
+                                    errcheck = 4;
+                                    throw new Error("HTTP status " + response.status);
+                                }
 
                             } return response.json();
                         })
                         .then(
                             success => {
                                 console.log(success)
-                                location.href="../Admin/admindashboard.html"
+                                // location.href="../Admin/admindashboard.html"
+                                // console.log(longitude)
                             }
                         )
                         .catch(
@@ -86,6 +136,14 @@
                                 }
                                 else if (errcheck == 2) {
                                     document.getElementById('message').innerHTML = 'YOU ARE UNAUTHORIZED'
+                                    document.getElementById('message').style.color = "red"
+                                }
+                                else if (errcheck == 3) {
+                                    document.getElementById('message').innerHTML = 'OTP size constraint '
+                                    document.getElementById('message').style.color = "red"
+                                }
+                                else if (errcheck == 4) {
+                                    document.getElementById('message').innerHTML = 'OTP already used'
                                     document.getElementById('message').style.color = "red"
                                 }
                             }
