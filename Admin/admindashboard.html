@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin|Dashboard</title>
+</head>
+<body>
+    <div id="adminshow">
+
+    </div>
+    <button><a href="../Admin/createevent.html">Create Event</a></button><br>
+    <button><a href="../Admin/events.html">Events</a></button><br>
+    
+    <script>
+    // console.log(localStorage.getItem('token'))
+
+    function gettext() {
+                fetch('https://painhost99.herokuapp.com/events/info' ,{
+                        headers: {
+                            "Authorization": localStorage.getItem('token')
+                        },
+                        })
+                .then((res) => res.json())
+                .then((data) => {
+                    let output=''
+                    output+=`<p>${data[0].admin_email}</p><br>
+                            events hosted:${data.length}<br>`
+                    document.getElementById('adminshow').innerHTML = output;
+                })
+    }
+    gettext();
+
+
+
+    </script>
+</body>
+</html>

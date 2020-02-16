@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AttendanceApp|Signup</title>
+</head>
+<body>
+    <form id="form">
+        <p id="message"></p>
+    
+    <input class="f1" type="name" name="username" value="" placeholder="Username" required><br>
+    <input class="f1" type="email" name="email" value="" placeholder="Email" required><br>
+    <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
+    <input class="button3 submit" type="submit" value="Signup">
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
+    <script>
+    $(document).ready(function () {
+        console.log(localStorage.getItem('token'))
+            ca=false;
+            // ce=false;
+            ce=true
+            $('.submit').click(function (e) {
+                e.preventDefault();
+                //Email validation
+                // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
+                //     ce = true;
+                // } else {
+                //     message.innerHTML = "Please enter a valid email"
+                //     ce=false;
+                // }
+                if (form.password.value == "" ||
+                    form.email.value == ""||
+                    form.name.value =="") {
+                    message.innerHTML = 'All fields are required'
+                    ca = false;
+                } else {
+                    ca = true;
+                }
+                var errcheck=0;
+                let formData = new FormData(form);
+                var object = {};
+                formData.forEach(function (value, key) {
+                    console.log(value)
+                    object[key] = value;
+                });
+                console.log(JSON.stringify(object))
+                console.log(ca,ce);
+                if (ca & ce) {
+                    fetch('https://painhost99.herokuapp.com/user/signup', {
+                        method: 'POST',
+                        crossDomain: true,
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(object)
+                    })
+                    .then(function(response) {
+                        console.log(response.status);
+                         // Will show you the status
+                             if(response.status==208){
+                                 errcheck=1;
+                             throw new Error("HTTP status " + response.status);
+                             
+                            }
+                            else if(response.status==500){
+                                errcheck=2;
+                             throw new Error("HTTP status " + response.status);
+                            }
+                            return response.json();
+                            })
+                            .then(
+                        success => {
+                            document.getElementById('message').innerHTML = 'Account Created'
+                            document.getElementById('message').style.color = "green"
+                            console.log(success)
+                            console.log(localStorage.getItem('token'))
+							for (let elem of $("#form")) {
+							elem.reset()
+							}
+                        }
+                    ).catch(
+                        error => {
+                            if(errcheck==1){
+                            document.getElementById('message').innerHTML = 'User already exist'
+                            document.getElementById('message').style.color = "red"
+                            }
+                            else if(errcheck==2){
+                            document.getElementById('message').innerHTML = 'Server Error'
+                            document.getElementById('message').style.color = "red"
+                            }
+                            console.log(error)
+                        }
+                    );
+                }
+            })
+        })
+    </script>
+</body>
+</html>

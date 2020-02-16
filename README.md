@@ -1,38 +1,31 @@
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
-	<h2 align="center"> < Insert Project Title Here > </h2>
-	<h4 align="center"> < Insert Project Description Here > <h4>
+	<h2 align="center"> < AttendanceApp-Frontend > </h2>
+	<h4 align="center"> < Frontend for Real Time Attendence progressive web application, which supports mulitple events simultaneously with real time feedback to admin and different admins. It also consists of location feature to detect proxies and many other features. > <h4>
 </p>
 
----
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
+--- 
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
-
-
+[![HitCount](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend.svg)](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend)
+<br>
+[![buymeacoffee: https://www.buymeacoffee.com/tomquirk](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/tomquirk)
 ## Functionalities
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-
+- [ ] < Progressive Web Application >
+- [ ]  < Real Time Attendence >
+- [ ]  < Multiple Simultaneous events supported >
+- [ ]  < Live status to admin >
+- [ ]  < Live broadcast to each event participants >
+- [ ]  < Proxy check measure by location check >
 <br>
 
 
 ## Instructions to run
 
-* Pre-requisites:
-	-  < insert pre-requisite >
-	-  < insert pre-requisite >
-
-* < directions to install > 
-```bash
-< insert code >
-```
-
 * < directions to execute >
 
 ```bash
-< insert code >
+< clone repo >
+< open Login >
 ```
 
 <br>
