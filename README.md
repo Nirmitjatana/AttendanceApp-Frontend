@@ -8,7 +8,7 @@
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://attendance-app.netlify.com)
 [![HitCount](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend.svg)](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend)
 <br><br>
-[![buymeacoffee: https://www.buymeacoffee.com/tomquirk](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/tomquirk)
+[![buymeacoffee: https://www.buymeacoffee.com](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)]
 ## Functionalities
 - [ ] Progressive Web Application 
 - [ ] Real Time Attendence 
