@@ -11,11 +11,10 @@
 
     </div>
     <button><a href="../Admin/createevent.html">Create Event</a></button><br>
-    <button><a href="../Admin/events.html">Events</a></button><br>
-    
+    <button><a href="../Admin/events.html"> Past events</a></button><br>
+    <button><a href="../Admin/Createdevents.html">Events on hold</a></button><br>
     <script>
-    // console.log(localStorage.getItem('token'))
-
+     console.log(localStorage.getItem('token'))
     function gettext() {
                 fetch('https://painhost99.herokuapp.com/events/info' ,{
                         headers: {
@@ -28,6 +27,7 @@
                     output+=`<p>${data[0].admin_email}</p><br>
                             events hosted:${data.length}<br>`
                     document.getElementById('adminshow').innerHTML = output;
+                    
                 })
     }
     gettext();

@@ -17,6 +17,7 @@
             required><br>
         <input class="f1" type="number" name="location_range" value="" placeholder="Range(in m)" required><br>
         <input class="f1" type="number" name="broadcast_choice" value="" placeholder="real time for users" required><br>
+        <input class="f1" type="number" name="start_event" value="" placeholder="start event" required><br>
         <input class="f1" type="number" name="otp" value="" placeholder="6 digit OTP" required><br>
         <input class="button3 submit" type="submit" value="Create Event">
     </form>
@@ -51,14 +52,9 @@
                 getLocation();
                 // while(!latitude){
                 //     console.log(latitude)
-                // }  
-                
+                // }      
     </script>
-
-
-
     <script>
-    
         $(document).ready(function () {
             ca = false;
             $('.submit').click(function (e) {
@@ -75,8 +71,6 @@
                     ca = true;
                 }
                 var errcheck = 0;
-                
-                    
                 // var jwt = 
                 // console.log(jwt);
                 // console.log(localStorage.getItem('token'))
@@ -90,7 +84,7 @@
                 object["longitude"] = longitude;
 
                 if (ca) {
-                    fetch('https://painhost99.herokuapp.com/event/create', {
+                    fetch('https://painhost99.herokuapp.com/event/set', {
                         method: 'POST',
                         crossDomain: true,
                         headers: {
@@ -124,8 +118,13 @@
                         .then(
                             success => {
                                 console.log(success)
-                                // location.href="../Admin/admindashboard.html"
+                                // location.href="../Admin/Createdevents.html"
                                 // console.log(longitude)
+                                document.getElementById('message').innerHTML = 'Event created'
+                                document.getElementById('message').style.color = "green"
+                                
+                                location.href="../Admin/Createdevents.html"
+                                
                             }
                         )
                         .catch(

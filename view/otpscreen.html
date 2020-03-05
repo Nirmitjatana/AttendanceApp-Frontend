@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTPscreen</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="messages"></ul>
+    <input type="text" id="myMessage">
+    <!-- <button id="sendbutton">Send</button> -->
+    <button id="attendence_button">Attendance</button>
+    <script>
+        var latitude;
+                var longitude;
+                function getLocation() {
+                    if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition);
+                                } 
+                            }
+                function showPosition(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                    }
+                getLocation();
+                // while(!latitude){
+                //     console.log(latitude)
+                // }  
+                
+    </script>
+    <script>
+        $(document).ready(function () {
+            var socket = io.connect('https://painhost99.herokuapp.com');
+        var socket_attendence = io('https://painhost99.herokuapp.com/attendence_namespace')
+        var socket_admin = io('https://painhost99.herokuapp.com/admin_namespace')
+        var socket_rooms = io('https://painhost99.herokuapp.com/rooms_namespace')
+        $('#attendence_button').on('click', function() {
+            socket_attendence.emit('attendence_request', {'otp':$('#myMessage').val(), 'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM1OTE1NDMsImlhdCI6MTU4MjA1NTUzOCwic3ViIjo0fQ.0HtN_inylnIGg7QMxG1PjGqBxebwgx2S_owy0g0pjnI', 'latitude':$(latitude), 'longitude':$(longitude)});
+            $('#myMessage').val('');
+        });
+
+        socket_attendence.on('attendence_result', function(json) {
+		$("#messages").append('<li>'+json+'</li>');
+		console.log('Received message on attendence_namespace');
+        console.log(json)
+	});
+
+
+
+    socket_admin.on('admin_listen', function(json) {
+		$("#messages").append('<li>'+json+'</li>');
+        $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
+        // Check if it's allowed to broadcast to rooms, if not then don't emit below to room socket else do emit
+        socket_rooms.emit('join', json);
+		console.log('Received message on admin_namespace');
+	});
+
+    socket_rooms.on('join_room', function(msg) {
+        console.log(msg);
+    });
+
+    socket_rooms.on('leave_room', function(msg) {
+        console.log(json);
+    });
+                                });
+    </script>
+</body>
+</html>

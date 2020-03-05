@@ -9,10 +9,13 @@
     <title>Admin|Events</title>
 </head>
 <body>
+  <!-- <div>
+    <button onclick="saveotp();"><a href="">Update</a></button>
+  </div> -->
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
-        
     </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -25,6 +28,9 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script>
+          // function saveotp(){
+          //   console.log(nj);
+          // }
             function gettext() {
                 fetch('https://painhost99.herokuapp.com/events/info' ,{
                         headers: {
@@ -36,47 +42,21 @@
                   let output = '';
                   let i;
                   let j=data.length;
-                  for(i=0;i<j;i++){
+                  for(i=j-1;i>0;i--){
                     output += `<div style="background-color: rgb(221, 221, 221);">
           <p>
-            Event-name:${data[0].event_name}<br>
-            Event-description:${data[0].event_description}<br>
-            OTP:${data[0].otp}<br>
-            Date and Time:${data[0].creation_date}<br>
+            Event-name:${data[i].event_name}<br>
+            Event-description:${data[i].event_description}<br>
+            OTP:${data[i].otp}<br>
+            Date and Time:${data[i].creation_date}<br>
           </p>
-        </div>`
+          <button><a href="">Update</a></button>
+        <button><a href="">Download</a></button><br>
+        </div>
+        `
+        
                   };
                   document.getElementById("accordionExample").innerHTML = output;
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 //   console.log(data.event_name[2]);
                 console.log(data[0].event_name)
     //               var length=data.length
