@@ -43,7 +43,7 @@
             OTP:${data[i].otp}<br>
             Date and Time:${data[i].creation_date}<br>
           </p>
-          <button onclick="startevent(object,${data[i].otp})" id="${i}">Start Event</button>
+          <button onclick="startevent(object,'${data[i].otp}')" id="${i}">Start Event</button>
         </div>
         `
                   };
@@ -78,7 +78,7 @@
     var position;
     function startevent(object,otp){
       console.log(object); 
-    fetch('https://painhost99.herokuapp.com/event/start/000011', {
+    fetch('https://painhost99.herokuapp.com/event/start/'+otp,{
                     method: 'POST',
                     crossDomain: true,
                     headers: {

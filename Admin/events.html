@@ -12,6 +12,7 @@
   <!-- <div>
     <button onclick="saveotp();"><a href="">Update</a></button>
   </div> -->
+  
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
     </div>
@@ -49,69 +50,53 @@
             Event-description:${data[i].event_description}<br>
             OTP:${data[i].otp}<br>
             Date and Time:${data[i].creation_date}<br>
+            <form id="form">
+              <input class="f1" type="text" name="email" value="" placeholder="email" required><br>
+            </form>
           </p>
-          <button><a href="">Update</a></button>
+          <button onclick="update('otp')";>Update</button>
         <button><a href="">Download</a></button><br>
         </div>
         `
-        
                   };
                   document.getElementById("accordionExample").innerHTML = output;
                 //   console.log(data.event_name[2]);
                 console.log(data[0].event_name)
-    //               var length=data.length
-    //               var i;    
-    //               for(i=0;i<length;i++){
-    //                    output += `
-    //                       <div class="card">
-    //     <div class="card-header" id="heading${data.event_name[i]}">
-    //       <h2 class="mb-0" style="color: rgba(255, 62, 62, 0.89);">
-    //         ${data.i.event_name}<h5 style="color:rgba(116, 116, 116, 0.89); font-size: small;">${data.i.otp}</h5>
-    //                     <h3 style="color:rgba(116, 116, 116, 0.89); font-size: medium; padding-top: 10px;">Date:${data.i.creation_date}</h3>
-    //         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${data.i.id}" aria-expanded="false" aria-controls="collapse${data.i.id}" style="float: right;">
-    //           Details
-    //         </button>
-    //       </h2>
-    //     </div>
-    //     <div id="collapse${data.i.id}" class="collapse" aria-labelledby="heading${data.i.id}" data-parent="#accordionExample">
-    //       <div class="card-body">
-    //         ${data.i.event_description}
-    //       </div>
-    //     </div>
-    //   </div> b 
-    //                     `;
-    //                 } 
-                    //  document.getElementById('accordionExample').innerHTML = output;
-    //               }
-                  
-                  
-    //               }
-    //             }
-    //         gettext(k);
-    
-                  
-    //               $("#give").click(function () {
-    //                 // if(k+3<=slen){
-    //                 k = k + 3;
-    //                 // }
-    //                 // else{
-    //                 //   k=k+slen;
-    //                 // }
-    //                 if(allflag==1){
-    //                   gettext(k, 1);
-    //                 }else if(eventflag == 1){
-    //                   gettext(k, 2);
-    //                 }else if(workshopflag == 1){
-    //                   gettext(k, 3);
-    //                 }
-    
-    
-    
-    //                 if(k>=gslen){
-    //                 $("#give").css("display", "none");
-    
                    });
-                  };gettext();
+
+
+                   
+
+
+
+
+
+                  };
+                  gettext();
+
+
+                  function update(otp){
+                    let formData = new FormData(form);
+                var object = {};
+                formData.forEach(function (value, key) {
+                    object[key] = value;
+                });
+                    
+                    object["OTP"] = otp;
+                    fetch('https://painhost99.herokuapp.com/event/start/'+email,{
+                    method: 'POST',
+                    crossDomain: true,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": localStorage.getItem('token')
+                    },
+                    body: JSON.stringify(object)
+                })
+                    .then(
+                        success => {
+                            console.log(success)    
+                            }); 
+                  }  
           </script>
 
 
