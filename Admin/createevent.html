@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin|Create</title>
 </head>
-
 <body>
     <form id="form">
         <p id="message"></p>
@@ -56,7 +54,8 @@
     </script>
     <script>
         $(document).ready(function () {
-            ca = false;
+            ca = true;
+            let locationflag=1;
             $('.submit').click(function (e) {
                 e.preventDefault();
                 if (form.event_description.value == "" ||
@@ -67,8 +66,9 @@
                     form.otp.value == "") {
                     message.innerHTML = 'All fields are required'
                     ca = false;
-                } else {
-                    ca = true;
+                }
+                else if(form.startevent==0) {
+                    locationflag=0;
                 }
                 var errcheck = 0;
                 // var jwt = 
@@ -112,7 +112,6 @@
                                     errcheck = 4;
                                     throw new Error("HTTP status " + response.status);
                                 }
-
                             } return response.json();
                         })
                         .then(
@@ -122,9 +121,12 @@
                                 // console.log(longitude)
                                 document.getElementById('message').innerHTML = 'Event created'
                                 document.getElementById('message').style.color = "green"
-                                
+                                if(locationflag==0){
                                 location.href="../Admin/Createdevents.html"
-                                
+                                }
+                                else{
+                                    location.href="../Admin/admindashboard.html"
+                                }
                             }
                         )
                         .catch(

@@ -6,11 +6,11 @@
     <title>Created events</title>
 </head>
 <body>
-    <div class="accordion" id="accordionExample" style="padding-top: 40px;">
-        <!-- here data fetched will be shown -->
-    </div>
-    <form id="form"></form>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<div class="accordion" id="accordionExample" style="padding-top: 40px;">
+<!-- here data fetched will be shown -->
+</div>
+<form id="form"></form>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -35,7 +35,7 @@
                   let output = '';
                   let i;
                   let j=data.length;
-                  for(i=j-1;i>0;i--){
+                  for(i=0;i<j;i++){
                     output += `<div style="background-color: rgb(221, 221, 221);">
           <p>
             Event-name:${data[i].event_name}<br>
@@ -77,7 +77,7 @@
             }
     var position;
     function startevent(object,otp){
-      console.log(object); 
+    console.log(object); 
     fetch('https://painhost99.herokuapp.com/event/start/'+otp,{
                     method: 'POST',
                     crossDomain: true,

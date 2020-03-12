@@ -12,7 +12,20 @@
   <!-- <div>
     <button onclick="saveotp();"><a href="">Update</a></button>
   </div> -->
-  
+  <div>
+    <form id="form">
+      <input class="f1" type="email" name="email" value="" placeholder="email" required><br>
+    </form>
+    <!-- <script>
+
+                
+
+
+
+      localStorage.setItem('email');
+      console.log(localStorage.getItem('email'));
+    </script> -->
+  </div>
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
     </div>
@@ -40,22 +53,21 @@
                         })
                 .then((res) => res.json())
                 .then((data) => {
+                  console.log(data);
                   let output = '';
-                  let i;
+                  let i=0;
                   let j=data.length;
-                  for(i=j-1;i>0;i--){
+                  for(i=j-1;i>-1;i--){
                     output += `<div style="background-color: rgb(221, 221, 221);">
           <p>
             Event-name:${data[i].event_name}<br>
             Event-description:${data[i].event_description}<br>
             OTP:${data[i].otp}<br>
             Date and Time:${data[i].creation_date}<br>
-            <form id="form">
-              <input class="f1" type="text" name="email" value="" placeholder="email" required><br>
-            </form>
+            
           </p>
-          <button onclick="update('otp')";>Update</button>
-        <button><a href="">Download</a></button><br>
+          <button onclick="update('${data[i].otp}')";>Update</button>
+         <button onclick="download('000006')";>Download</button><br>
         </div>
         `
                   };
@@ -63,27 +75,28 @@
                 //   console.log(data.event_name[2]);
                 console.log(data[0].event_name)
                    });
-
-
-                   
-
-
-
-
-
                   };
                   gettext();
 
 
-                  function update(otp){
-                    let formData = new FormData(form);
+                //   
+                //     let formData = new FormData(form);
+                 
+                // formData.forEach(function (value, key) {
+                //     object[key] = value;
+                // });
+                function update(otp){
+                  let formData = new FormData(form);
                 var object = {};
                 formData.forEach(function (value, key) {
+                    console.log(value)
                     object[key] = value;
                 });
-                    
-                    object["OTP"] = otp;
-                    fetch('https://painhost99.herokuapp.com/event/start/'+email,{
+
+                    object["otp"] = otp;
+                    console.log(object);
+                    var email = object.email;
+                    fetch('https://painhost99.herokuapp.com/attendence/update/'+email,{
                     method: 'POST',
                     crossDomain: true,
                     headers: {
@@ -96,7 +109,22 @@
                         success => {
                             console.log(success)    
                             }); 
-                  }  
+                }
+
+                function download(otp) {
+                  console.log(otp);
+                fetch('https://painhost99.herokuapp.com/download/'+otp ,{
+                        // headers: {
+                        //     // "Authorization": localStorage.getItem('token')
+                        // },
+                        })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                });
+            }
+
+
           </script>
 
 
