@@ -29,3 +29,51 @@
     width:99vw;
     text-align: center;
 }
+.f1{
+    border-color:#C8C8C8;
+    border-style: solid;
+    margin-top:35px;
+    width:20vw;
+    height:5.5vh;
+    border-radius: 8px;
+    padding:5px;
+}
+.email{
+    width:99vw;
+    text-align: center;
+}
+.carder{
+    border-style: none;
+    box-shadow: 2px 2px 4px 4px rgb(214, 213, 213,0.8);
+    border-radius: 13px;
+    width:57vh;
+    height:40vh;
+    margin-top: 25px;
+}
+.carder > h2{
+    padding:30px;
+    color:#2F54EB;
+    font-weight: 800;
+}
+.carder > h5{
+    padding-left:30px;
+    color:#2F54EB;
+}
+.buttons > button{
+    border-style: solid;
+    border-color: #2F54EB;
+    background-color: white;
+    color:#2F54EB;
+    font-weight: 900;
+    width:20vh;
+    height:8vh;
+    border-radius: 13px;
+    border-width: 4px;
+}
+.buttons{
+    width: 100%;
+    text-align: center;
+    margin-top:8vh;
+    
+    
+}
