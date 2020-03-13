@@ -6,30 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/events.css">
     <title>Admin|Events</title>
 </head>
 <body>
-  <!-- <div>
-    <button onclick="saveotp();"><a href="">Update</a></button>
-  </div> -->
+  <div class="logos">
+    <div class="dsclogo">
+        <img src="../Assets/logo.png" alt="">
+    </div>
+    <div class="applogo">
+        <img src="../Assets/applogo1.png" alt="">
+    </div>
+  </div>
+  <div class="headingparent">
+    <div class="heading">
+        <h1>Events</h1>
+    </div>
+    </div>
+
+
+
+
   <div>
     <form id="form">
       <input class="f1" type="email" name="email" value="" placeholder="email" required><br>
     </form>
-    <!-- <script>
-
-                
-
-
-
-      localStorage.setItem('email');
-      console.log(localStorage.getItem('email'));
-    </script> -->
   </div>
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
     </div>
 
+
+
+
+
+
+
+
+
+
+
+    <script src="../JS/events.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -41,90 +59,5 @@
         crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script>
-          // function saveotp(){
-          //   console.log(nj);
-          // }
-            function gettext() {
-                fetch('https://painhost99.herokuapp.com/events/info' ,{
-                        headers: {
-                            "Authorization": localStorage.getItem('token')
-                        },
-                        })
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data);
-                  let output = '';
-                  let i=0;
-                  let j=data.length;
-                  for(i=j-1;i>-1;i--){
-                    output += `<div style="background-color: rgb(221, 221, 221);">
-          <p>
-            Event-name:${data[i].event_name}<br>
-            Event-description:${data[i].event_description}<br>
-            OTP:${data[i].otp}<br>
-            Date and Time:${data[i].creation_date}<br>
-            
-          </p>
-          <button onclick="update('${data[i].otp}')";>Update</button>
-         <button onclick="download('000006')";>Download</button><br>
-        </div>
-        `
-                  };
-                  document.getElementById("accordionExample").innerHTML = output;
-                //   console.log(data.event_name[2]);
-                console.log(data[0].event_name)
-                   });
-                  };
-                  gettext();
-
-
-                //   
-                //     let formData = new FormData(form);
-                 
-                // formData.forEach(function (value, key) {
-                //     object[key] = value;
-                // });
-                function update(otp){
-                  let formData = new FormData(form);
-                var object = {};
-                formData.forEach(function (value, key) {
-                    console.log(value)
-                    object[key] = value;
-                });
-
-                    object["otp"] = otp;
-                    console.log(object);
-                    var email = object.email;
-                    fetch('https://painhost99.herokuapp.com/attendence/update/'+email,{
-                    method: 'POST',
-                    crossDomain: true,
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": localStorage.getItem('token')
-                    },
-                    body: JSON.stringify(object)
-                })
-                    .then(
-                        success => {
-                            console.log(success)    
-                            }); 
-                }
-
-                function download(otp) {
-                  console.log(otp);
-                fetch('https://painhost99.herokuapp.com/download/'+otp ,{
-                        // headers: {
-                        //     // "Authorization": localStorage.getItem('token')
-                        // },
-                        })
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data);
-                });
-            }
-          </script>
-
-
 </body>
 </html>
