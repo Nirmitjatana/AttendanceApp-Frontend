@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/hold.css">
     <title>Created events</title>
 </head>
 <body>
-<div class="accordion" id="accordionExample" style="padding-top: 40px;">
-<!-- here data fetched will be shown -->
+<div class="logos">
+  <div class="dsclogo">
+      <img src="../Assets/logo.png" alt="">
+  </div>
+  <div class="applogo">
+      <img src="../Assets/applogo1.png" alt="">
+  </div>
 </div>
-<form id="form"></form>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<div class="headingparent">
+  <div class="heading">
+      <h1>On hold</h1>
+  </div>
+  </div>
+
+
+  <div class="accordion" id="accordionExample">
+    <!-- here data fetched will be shown -->
+    </div>
+
+
+      <script src="../JS/hold.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -21,77 +40,6 @@
         crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script>
-            function gettext() {
-                fetch('https://painhost99.herokuapp.com/event/holded' ,{
-                        headers: {
-                            "Authorization": localStorage.getItem('token')
-                        },
-                        })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data);
-                    localStorage.setItem('data',data);
-                  let output = '';
-                  let i;
-                  let j=data.length;
-                  for(i=0;i<j;i++){
-                    output += `<div style="background-color: rgb(221, 221, 221);">
-          <p>
-            Event-name:${data[i].event_name}<br>
-            Event-description:${data[i].event_description}<br>
-            OTP:${data[i].otp}<br>
-            Date and Time:${data[i].creation_date}<br>
-          </p>
-          <button onclick="startevent(object,'${data[i].otp}')" id="${i}">Start Event</button>
-        </div>
-        `
-                  };
-                  document.getElementById("accordionExample").innerHTML = output;
-                //   console.log(output);
-                });
-             };
-              gettext();
-          </script>
-          <script>
-            var latitude;
-                var longitude;
-                function getLocation() {
-                    if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(showPosition);
-                                } 
-                            }
-                function showPosition(position) {
-                latitude = position.coords.latitude;
-                longitude = position.coords.longitude;
-                console.log(latitude);
-                createobject();
-                    }
-                    getLocation();
-                    var object = {};
-                   function createobject(){
-            object["latitude"] = latitude;
-            object["longitude"] = longitude;
-            object["start_event"] = 1;
-             console.log(object);
-            }
-    var position;
-    function startevent(object,otp){
-    console.log(object); 
-    fetch('https://painhost99.herokuapp.com/event/start/'+otp,{
-                    method: 'POST',
-                    crossDomain: true,
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": localStorage.getItem('token')
-                    },
-                    body: JSON.stringify(object)
-                })
-                    .then(
-                        success => {
-                            console.log(success)    
-                            }); 
-    }   
-</script>
+
 </body>
 </html>
