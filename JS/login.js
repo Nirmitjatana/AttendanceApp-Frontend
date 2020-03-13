@@ -1,13 +1,15 @@
-
-    $(document).ready(function () {
+$(document).ready(function () {
+    
             ca=false;
-            $('.submit').click(function (e) {
+            $('.login').click(function (e) {
+                
                 e.preventDefault();
                 if (form.password.value == "" ||
                     form.email.value == "") {
                     message.innerHTML = 'All fields are required'
                     ca = false;
-                } else {
+                } 
+                else {
                     ca = true;
                 }
                 var errcheck=0;
@@ -26,6 +28,7 @@
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify(object)
+                        
                     })
                     .then(function(response) {
                         console.log(response.status);   // Will show you the status
