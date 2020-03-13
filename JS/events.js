@@ -10,20 +10,51 @@ function gettext() {
       let output = '';
       let i=0;
       let j=data.length;
-      for(i=j-1;i>-1;i--){
-        output += `<div style="background-color: rgb(221, 221, 221);">
-<p>
-Event-name:${data[i].event_name}<br>
-Event-description:${data[i].event_description}<br>
-OTP:${data[i].otp}<br>
-Date and Time:${data[i].creation_date}<br>
+      for(i=j-1;i>-1;i=i-2){
+          if(i>1){
+        output += `        <div class="container">
+        <div class="row" style="width:87vw; margin: auto auto;">
+          <div class="col-sm" >
 
-</p>
-<button onclick="update('${data[i].otp}')";>Update</button>
-<button onclick="download('000006')";>Download</button><br>
-</div>
+
+            
+            <div class="carder">
+              
+              <h2>${data[i].event_name}</h2>
+              
+              <h5>OTP:${data[i].otp}</h5>
+              <h5>${data[i].creation_date}</h5>
+              <div class="buttons">
+              <button onclick="update('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Update</button>
+              <button onclick="download('000006')";>Download</button></div>
+              </div>
+
+
+
+
+          </div>
+          <div class="col-sm">
+
+
+            <div class="carder">
+              <h2>${data[i-1].event_name}</h2>
+              
+              <h5>OTP:${data[i-1].otp}</h5>
+              <h5>${data[i-1].creation_date}</h5>
+              <div class="buttons">
+              <button onclick="update('${data[i-1].otp}')"; style="color:white;background-color: #2F54EB;">Update</button>
+              <button onclick="download('000006')";>Download</button>
+              </div>
+              </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
 `
-      };
+        }  };
       document.getElementById("accordionExample").innerHTML = output;
     //   console.log(data.event_name[2]);
     console.log(data[0].event_name)
