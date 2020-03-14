@@ -1,8 +1,10 @@
-$(document).ready(function () {
+ $(document).ready(function () {
     console.log(localStorage.getItem('token'))
         ca=false;
-        ce=true
-        $('.submit').click(function (e) {
+        ce=true;
+        
+        $('.login').click(function (e) {
+            console.log('nirmit');
             e.preventDefault();
             if (form.password.value == "" ||
                 form.email.value == ""||
@@ -11,6 +13,7 @@ $(document).ready(function () {
                 ca = false;
             } else {
                 ca = true;
+                console.log('nirmit');
             }
             var errcheck=0;
             let formData = new FormData(form);
@@ -55,7 +58,7 @@ $(document).ready(function () {
                         for (let elem of $("#form")) {
                         elem.reset()
                         }
-                        location.href="../view/otpscreen.html"
+                        location.href="./view/otpscreen.html"
                     }
                 ).catch(
                     error => {
