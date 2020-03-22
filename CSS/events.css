@@ -24,6 +24,7 @@
     font-weight: bolder;
     font-size: 2em;
     padding-top: 30px;
+    font-weight: bolder;
 }
 .headingparent{
     width:99vw;
@@ -48,7 +49,10 @@
     border-radius: 13px;
     width:57vh;
     height:40vh;
-    margin-top: 25px;
+    /* margin:40px;
+    margin-right:40px; */
+    margin-top: 40px;
+    margin-left:-38px;
 }
 .carder > h2{
     padding:30px;
@@ -76,4 +80,19 @@
     margin-top:8vh;
     
     
+}
+@media screen and (max-width: 700px){
+
+    .dsclogo{
+        display:none;
+    }
+    .applogo{
+        display:none;
+    }
+    .heading{
+        padding-top:100px;
+    }
+    .f1{
+        width:60vw;
+    }
 }
