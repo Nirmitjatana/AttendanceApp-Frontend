@@ -55,10 +55,6 @@
     border-width: 2px;
     
 }
-/* .ends{
-    width:30%;
-    display: inline-block;
-} */
 .ends > input{
     width:80%;
     padding:15px;
@@ -66,13 +62,6 @@
     border-style:solid;
     border-color:#C8C8C8;
 }
-
-/* .smallinputs{
-    /* display:inline-block; */
-    /* border-style: solid;
-    border-color: lightcoral; */
-    /* width:84vw;
-} */
 .submit{
     margin-top:42px;
     border-style: hidden;

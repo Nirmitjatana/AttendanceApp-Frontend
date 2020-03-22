@@ -8,8 +8,8 @@
 .dsclogo{
     width:95vw;
     margin-top:25px;
-    border-color: lightcoral;
-    border-style: solid;
+    /* border-color: lightcoral;
+    border-style: solid; */
     height:6vh;
 }
 .container{
@@ -24,8 +24,8 @@
 }
 .applogo{
     width:98vw;
-    border-color: lightcoral;
-    border-style: solid;
+    /* border-color: lightcoral;
+    border-style: solid; */
     text-align: center;
 }
 .applogo > img{
@@ -46,8 +46,8 @@
 }
 .input{
     text-align: center;
-    border-color: lightcoral;
-    border-style: solid;
+    /* border-color: lightcoral;
+    border-style: solid; */
     width:98vw;
     
 }

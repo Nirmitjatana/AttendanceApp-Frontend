@@ -13,8 +13,8 @@
     margin-top:20px;
     width:99vw;
     text-align: center;
-    border-style: solid;
-    border-color: lightcoral;
+    /* border-style: solid;
+    border-color: lightcoral; */
 }
 #myMessage{
     border-color:#C8C8C8;
