@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <style>
+        @media screen and (max-width: 700px){
+.myMessage{
+    width:40vw;
+}
+#attendence_button{
+    width:100vw;
+}
+}
+      </style>
     <title>OTP Screen</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/otp.css">
@@ -21,18 +31,18 @@
     </head>
     <body>
       <div class="logos">
-        <div class="dsclogo">
+        <!-- <div class="dsclogo">
             <img src="../Assets/logo.png" alt="">
-        </div>
+        </div> -->
         <div class="applogo">
             <img src="../Assets/applogo1.png" alt="">
         </div>
     </div>
     
     <div class="email">
-      <label>Enter OTP</label><br>
+      <h2>Enter OTP</h2><br>
     <input type="text" id="myMessage"><br>
-    <input id="attendence_button" type="submit" value="Mark Attendance">
+    <input id="attendence_button" type="submit" value="Mark Attendance"><br><br><br>
     </div>
     <div id="messages">
     </div>
