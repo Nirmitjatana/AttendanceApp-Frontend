@@ -10,7 +10,6 @@ function gettext() {
     });
 }
 gettext();
-
 var latitude;
                 var longitude;
                 function getLocation() {
