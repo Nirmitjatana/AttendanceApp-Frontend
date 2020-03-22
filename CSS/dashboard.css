@@ -5,28 +5,46 @@
     /* color:#C8C8C8; */
 }
 
+.dsclogo{
+    width:95vw;
+    margin-top:25px;
+    border-color: lightcoral;
+    border-style: solid;
+    height:6vh;
+}
+.container{
+    width:100vw;
+}
 .dsclogo > img{
     width:19vh;
     height:5.5vh;
     float:right;
-    margin-right:60px;
-    margin-top:15px;
+    /* margin-right:60px;
+    margin-top:15px; */
+}
+.applogo{
+    width:98vw;
+    border-color: lightcoral;
+    border-style: solid;
+    text-align: center;
 }
 .applogo > img{
     width:48vh;
-   margin-left:36.5vw;
-   margin-top: 10vh; 
+   /* margin-left:36.5vw;
+   margin-top: 10vh;  */
 }
 .buttons{
-    width:99vw;
+    width:98vw;
     text-align: center;
     margin-top:80px;
+    border-color: lightcoral;
+    border-style: solid;
 }
-#adminshow{
+/* #adminshow{
     margin-right:70px;
     float: right;
     margin-top:20vh;
-}
+} */
 .createbutton{
     width:14.3vw;
     height:7vh;
@@ -52,3 +70,40 @@
     border-width: 5px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 700px){
+
+    .dsclogo{
+        text-align: center;
+        width:117vw;
+    }
+    
+    .dsclogo > img{
+        /* margin-top: auto;
+        margin-left: auto; */
+        float:none;
+    }
+    .applogo{
+        width:117vw;
+    }
+    .applogo > img{
+        width:48vh; 
+    }
+    .buttons{
+        width:117vw;
+    }
+    .createbutton{
+        width:48vw;
+    }
+    .pastbutton{
+        width:48vw;
+    }
+    /* #adminshow{
+        margin-right:2vw;
+        margin-left:70vw;   
+        margin-top:260px;
+        border-color: lightcoral;
+    border-style: solid;
+    } */
+    
+    }
