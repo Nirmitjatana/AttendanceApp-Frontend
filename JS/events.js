@@ -12,7 +12,8 @@ function gettext() {
       let j=data.length;
       for(i=j-1;i>-1;i=i-2){
           if(i>1){
-        output += `        <div class="container">
+        output += `        
+        <div class="container">
         <div class="row" style="width:87vw; margin: auto auto;">
           <div class="col-sm" >
 
