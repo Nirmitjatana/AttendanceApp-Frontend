@@ -27,14 +27,14 @@
     border-color:#C8C8C8;
     border-style: solid;
     margin-top:35px;
-    width:20vw;
+    width:30vw;
     height:5.5vh;
     border-radius: 8px;
     padding:5px;
 } 
 #attendence_button{
-    width:20.9vw;
-    height:8vh;
+    width:30vw;
+    height:6.5vh;
     margin-top:50px;
     border-radius: 10px;
     border-style: hidden;
@@ -47,4 +47,27 @@
 #messages{
     text-align: center;
     margin-top:40px;
+}
+@media screen and (max-width: 700px){
+
+    #myMessage{
+        
+        width:40vw;
+        height:5.5vh;
+        border-radius: 8px;
+        padding:5px;
+    } 
+    #attendence_button{
+        width:20.9vw;
+        height:8vh;
+        margin-top:50px;
+        border-radius: 10px;
+        border-style: hidden;
+        background-color: #2F54EB;
+        color:white;
+        font-weight: 800;
+        font-stretch: ultra-expanded;
+        cursor: pointer;
+    }
+
 }
