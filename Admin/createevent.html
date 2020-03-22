@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/create.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Admin|Create</title>
 </head>
 <body>
@@ -26,59 +27,59 @@
     <form id="form">
         <p id="message"></p>
         <div class="eventname">
-            <h1>Event name</h1>
+            <h4>Event name</h4>
             <input class="f1" type="text" name="event_name" value="" placeholder="Name" required>
         </div>
         <br>
         <div class="eventname">
-            <h1>Event description</h1>
+            <h4>Event description</h4>
             <textarea class="description" type="textarea" name="event_description" value="" placeholder="Type here...." required></textarea>
         </div>
         <br>
-        <div class="oneline">
-
-            <div class="ends">
-                <h1>Ends In</h1>
-                <input class="ends" type="number" name="ending_time_delta" value="" placeholder="in mins">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div class="ends">
+                    <h4>Ends In</h4>
+                    <input class="ends" type="number" name="ending_time_delta" value="" placeholder="in mins">
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="ends">
+                    <h4>Range</h4>
+                    <input class="f1" type="number" name="location_range" value="" placeholder="Range(in m)" required>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="ends">
+                    <h4>Real Time</h4>
+                    <input class="f1" type="number" name="broadcast_choice" value="" placeholder="Enter boolean value" required>
+                </div>
+              </div>
             </div>
-
-
-
-            <div class="ends">
-                <h1>Range</h1>
-                <input class="f1" type="number" name="location_range" value="" placeholder="Range(in m)" required>
+          </div>
+        <br>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div class="ends">
+                    <h4>Start event now</h4>
+                    <input class="f1" type="number" name="start_event" value="" placeholder="Enter boolean value" required>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="ends">
+                    <h4>Enter OTP</h4>
+                    <input class="f1" type="number" name="otp" value="" placeholder="6 digit OTP" required>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="ends">
+                    <input class="submit" type="submit" value="Create Event">
+                </div>
+              </div>
             </div>
-
-
-
-            <div class="ends">
-                <h1>Real Time</h1>
-                <input class="f1" type="number" name="broadcast_choice" value="" placeholder="real time for users" required>
-            </div>
-        </div>
-
-
-
-
-        <div class="oneline">
-
-            <div class="ends">
-                <h1>Start event now</h1>
-                <input class="f1" type="number" name="start_event" value="" placeholder="start event" required>
-            </div>
-
-
-            <div class="ends">
-                <h1>Enter OTP</h1>
-                <input class="f1" type="number" name="otp" value="" placeholder="6 digit OTP" required>
-            </div>
-
-
-            <div class="ends">
-                <input class="submit" type="submit" value="Create Event">
-            </div>
-        
-        </div>
+          </div>
     </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
