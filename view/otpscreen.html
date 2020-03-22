@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTPscreen</title>
+<html>
+    <head>
+    <title>OTP Screen</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/otp.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -15,67 +17,27 @@
         crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"
        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-</head>
-<body>  
-    <ul id="messages"></ul>
-    <input type="text" id="myMessage">
-    <!-- <button id="sendbutton">Send</button> -->
-    <button id="attendence_button">Attendance</button>
-    <script>
-        var latitude;
-                var longitude;
-                function getLocation() {
-                    if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(showPosition);
-                                } 
-                            }
-                function showPosition(position) {
-                latitude = position.coords.latitude;
-                longitude = position.coords.longitude;
-                    }
-                getLocation();
-                // while(!latitude){
-                //     console.log(latitude)
-                // }  
-                
-    </script>
-    <script>
-        $(document).ready(function () {
-            var socket = io.connect('https://painhost99.herokuapp.com');
-        var socket_attendence = io('https://painhost99.herokuapp.com/attendence_namespace')
-        var socket_admin = io('https://painhost99.herokuapp.com/admin_namespace')
-        var socket_rooms = io('https://painhost99.herokuapp.com/rooms_namespace')
-        $('#attendence_button').on('click', function() {
-            socket_attendence.emit('attendence_request', {'otp':$('#myMessage').val(), 'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM1OTE1NDMsImlhdCI6MTU4MjA1NTUzOCwic3ViIjo0fQ.0HtN_inylnIGg7QMxG1PjGqBxebwgx2S_owy0g0pjnI', 'latitude':$(latitude), 'longitude':$(longitude)});
-            $('#myMessage').val('');
-        });
-
-        socket_attendence.on('attendence_result', function(json) {
-		$("#messages").append('<li>'+json+'</li>');
-		console.log('Received message on attendence_namespace');
-        console.log(json)
-	});
+       <script src="../JS/otpscreen.js"></script>
+    </head>
+    <body>
+      <div class="logos">
+        <div class="dsclogo">
+            <img src="../Assets/logo.png" alt="">
+        </div>
+        <div class="applogo">
+            <img src="../Assets/applogo1.png" alt="">
+        </div>
+    </div>
+    
+    <div class="email">
+      <label>Enter OTP</label><br>
+    <input type="text" id="myMessage"><br>
+    <input id="attendence_button" type="submit" value="Mark Attendance">
+    </div>
+    <div id="messages">
+    </div>
+    </body>
+    </html>
 
 
 
-    socket_admin.on('admin_listen', function(json) {
-		$("#messages").append('<li>'+json+'</li>');
-        $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
-        // Check if it's allowed to broadcast to rooms, if not then don't emit below to room socket else do emit
-        socket_rooms.emit('join', json);
-		console.log('Received message on admin_namespace');
-	});
-
-    socket_rooms.on('join_room', function(msg) {
-        console.log(msg);
-    });
-
-    socket_rooms.on('leave_room', function(msg) {
-        console.log(json);
-    });
-                                });
-    </script>
-</body>
-</html>
