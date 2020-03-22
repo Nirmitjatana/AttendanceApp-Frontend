@@ -29,11 +29,11 @@ $(document).ready(function() {
 	    });
         socket_admin.on('admin_listen', function(json) {
             console.log(json);
-            console.log(json.email);
-            console.log(json.datetime);
-            console.log(json.Reason);
-		// $("#messages").append('<li>'+json+'</li>');
-        $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
+            // console.log(json.email);
+            // console.log(json.datetime);
+            // console.log(json.Reason);
+		$("#messages").append('<li>'+json+'</li>');
+        // $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
         // Check if it's allowed to broadcast to rooms, if not then don't emit below to room socket else do emit
         socket_rooms.emit('join', json);
 		// console.log('Received message on admin_namespace');
