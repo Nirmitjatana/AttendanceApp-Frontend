@@ -1,17 +1,7 @@
 *{
     font-family: montserrat;
     font-stretch: extra-expanded;
-    font-size: 1.02em;
-    /* font-weight:600; */
-    /* color:#C8C8C8; */
-}
-
-.dsclogo > img{
-    width:19vh;
-    height:5.5vh;
-    float:right;
-    margin-right:60px;
-    margin-top:15px;
+    font-size: 1.05em;
 }
 .applogo > img{
     width:9.4vh;
@@ -20,21 +10,24 @@
     margin-top:25px;
 }
 .email{
+    margin-top:20px;
     width:99vw;
     text-align: center;
+    border-style: solid;
+    border-color: lightcoral;
 }
 #myMessage{
     border-color:#C8C8C8;
     border-style: solid;
     margin-top:35px;
-    width:20vw;
+    width:30vw;
     height:5.5vh;
     border-radius: 8px;
     padding:5px;
 } 
 #attendence_button{
-    width:20.9vw;
-    height:8vh;
+    width:30vw;
+    height:7vh;
     margin-top:50px;
     border-radius: 10px;
     border-style: hidden;
@@ -47,4 +40,13 @@
 #messages{
     text-align: center;
     margin-top:40px;
+}
+
+@media screen and (max-width: 700px){
+#input{
+    width:40vw;
+}
+#attendence_button{
+    width:100vw;
+}
 }
