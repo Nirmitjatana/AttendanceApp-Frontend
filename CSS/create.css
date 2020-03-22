@@ -28,11 +28,15 @@
 .headingparent{
     width:99vw;
     text-align: center;
+    /* border-style: solid;
+    border-color: lightcoral; */
 }
 .intake{
     margin:auto auto;
     width:76vw;
     padding-top:10px;
+    /* border-style: solid;
+    border-color: lightcoral; */
     /* text-align: center; */
 }
 .eventname > input{
@@ -51,10 +55,47 @@
     border-width: 2px;
     
 }
-.ends{
+/* .ends{
     width:30%;
     display: inline-block;
+} */
+.ends > input{
+    width:80%;
+    padding:15px;
+    border-radius: 13px;
+    border-style:solid;
+    border-color:#C8C8C8;
 }
-.oneline{
-    
+
+/* .smallinputs{
+    /* display:inline-block; */
+    /* border-style: solid;
+    border-color: lightcoral; */
+    /* width:84vw;
+} */
+.submit{
+    margin-top:42px;
+    border-style: hidden;
+    background-color: #2F54EB;
+    color:white;
+    border-color:#2F54EB;
+}
+
+@media screen and (max-width: 700px){
+
+    .dsclogo{
+        display:none;
+    }
+    .applogo > img{
+        margin-left:40px;
+    }
+    .headingparent{
+        width:112vw;
+    }
+    .intake{
+        width:108vw;
+    }
+    .oneline{
+        display: inline-table;
+    }
 }
