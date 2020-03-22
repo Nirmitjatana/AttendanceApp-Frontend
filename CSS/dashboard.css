@@ -28,14 +28,16 @@
     margin-top:20vh;
 }
 .createbutton{
-    width:30vw;
+    width:14.3vw;
     height:7vh;
+    margin:8px;
     background-color: #2F54EB;
     border-style: solid;
     border-radius: 10px;
     border-color: #2F54EB;
     color:white;
     cursor: pointer;
+    margin-top:7px;
 }
 .pastbutton{
     width:14.3vw;
