@@ -68,3 +68,18 @@
     width:70vw;
     margin:auto auto;
 }
+@media screen and (max-width: 700px){
+
+    .dsclogo{
+        display:none;
+    }
+    .applogo{
+        display:none;
+    }
+    .heading{
+        padding-top:100px;
+    }
+    /* .f1{
+        width:60vw;
+    } */
+}

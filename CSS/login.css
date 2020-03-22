@@ -52,7 +52,7 @@
     
 }
 .login{
-    width:20.9vw;
+    width:20vw;
     height:8vh;
     margin-top:50px;
     border-radius: 10px;
@@ -96,6 +96,10 @@
     width:75vw;
     height: 9vh;
     margin-bottom: 18px;
+}
+.login{
+    width:75vw;
+    /* height: 9vh; */
 }
 
 
