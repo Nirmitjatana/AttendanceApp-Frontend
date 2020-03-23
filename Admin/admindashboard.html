@@ -4,36 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Admin|Dashboard</title>
 </head>
 <body>
-    <div id="adminshow">
-
+    <div class="dsclogo">
+        <img src="../Assets/logo.png" alt="">
     </div>
-    <button><a href="../Admin/createevent.html">Create Event</a></button><br>
-    <button><a href="../Admin/events.html">Events</a></button><br>
+    <div class="applogo">
+        <img src="../Assets/applogo.png" alt="">
+    </div>
     
-    <script>
-    // console.log(localStorage.getItem('token'))
+    <div class="buttons">
+            <button onclick="window.location.href = '../Admin/createevent.html';" class="createbutton">Create Event</button>
 
-    function gettext() {
-                fetch('https://painhost99.herokuapp.com/events/info' ,{
-                        headers: {
-                            "Authorization": localStorage.getItem('token')
-                        },
-                        })
-                .then((res) => res.json())
-                .then((data) => {
-                    let output=''
-                    output+=`<p>${data[0].admin_email}</p><br>
-                            events hosted:${data.length}<br>`
-                    document.getElementById('adminshow').innerHTML = output;
-                })
-    }
-    gettext();
+            <button onclick="window.location.href = './adminotp.html';" class="createbutton">Ongoing Event</button><br>
 
+            <button onclick="window.location.href = '../Admin/events.html';" class="pastbutton">Past events</button>
 
+            <button onclick="window.location.href = '../Admin/Createdevents.html';" class="pastbutton">Events on hold</button>
 
-    </script>
+            <div id="adminshow">
+                <!-- fetched data -->
+            </div>
+    </div>
+    
+    <script src="../JS/dashboard.js"></script>
 </body>
 </html>

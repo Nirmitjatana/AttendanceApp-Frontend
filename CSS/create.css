@@ -1,0 +1,90 @@
+*{
+    font-family: montserrat;
+    font-stretch: extra-expanded;
+    font-size: 1.02em;
+    /* font-weight:600; */
+    /* color:#C8C8C8; */
+}
+
+.dsclogo > img{
+    width:19vh;
+    height:5.5vh;
+    float:right;
+    margin-right:60px;
+    margin-top:15px;
+}
+.applogo > img{
+    width:9.4vh;
+    height:5.6vh;
+    margin-left:66px;
+    margin-top:25px;
+}
+.heading{
+    color:#2F54EB;
+    font-weight: bolder;
+    font-size: 2em;
+    padding-top: 30px;
+}
+.headingparent{
+    width:99vw;
+    text-align: center;
+    /* border-style: solid;
+    border-color: lightcoral; */
+}
+.intake{
+    margin:auto auto;
+    width:76vw;
+    padding-top:10px;
+    /* border-style: solid;
+    border-color: lightcoral; */
+    /* text-align: center; */
+}
+.eventname > input{
+    width:99%;
+    padding:15px;
+    border-radius: 13px;
+    border-style:solid;
+    border-color:#C8C8C8;
+}
+.description{
+    width:99%;
+    padding: 15px;
+    border-radius: 13px;
+    border-style:solid;
+    border-color:#C8C8C8;
+    border-width: 2px;
+    
+}
+.ends > input{
+    width:80%;
+    padding:15px;
+    border-radius: 13px;
+    border-style:solid;
+    border-color:#C8C8C8;
+}
+.submit{
+    margin-top:42px;
+    border-style: hidden;
+    background-color: #2F54EB;
+    color:white;
+    border-color:#2F54EB;
+}
+
+@media screen and (max-width: 700px){
+
+    .dsclogo{
+        display:none;
+    }
+    .applogo > img{
+        margin-left:40px;
+    }
+    .headingparent{
+        width:112vw;
+    }
+    .intake{
+        width:108vw;
+    }
+    .oneline{
+        display: inline-table;
+    }
+}

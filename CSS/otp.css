@@ -1,0 +1,52 @@
+*{
+    font-family: montserrat;
+    font-stretch: extra-expanded;
+    font-size: 1.05em;
+}
+.applogo > img{
+    width:9.4vh;
+    height:5.6vh;
+    margin-left:66px;
+    margin-top:25px;
+}
+.email{
+    margin-top:20px;
+    width:99vw;
+    text-align: center;
+    /* border-style: solid;
+    border-color: lightcoral; */
+}
+#myMessage{
+    border-color:#C8C8C8;
+    border-style: solid;
+    margin-top:35px;
+    width:30vw;
+    height:5.5vh;
+    border-radius: 8px;
+    padding:5px;
+} 
+#attendence_button{
+    width:30vw;
+    height:7vh;
+    margin-top:50px;
+    border-radius: 10px;
+    border-style: hidden;
+    background-color: #2F54EB;
+    color:white;
+    font-weight: 800;
+    font-stretch: ultra-expanded;
+    cursor: pointer;
+}
+#messages{
+    text-align: center;
+    margin-top:40px;
+}
+
+@media screen and (max-width: 700px){
+#input{
+    width:40vw;
+}
+#attendence_button{
+    width:100vw;
+}
+}

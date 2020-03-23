@@ -1,0 +1,107 @@
+*{
+    font-family: montserrat;
+    font-stretch: extra-expanded;
+    font-size: 1.02em;
+    /* font-weight:600; */
+    /* color:#C8C8C8; */
+}
+.dsclogo{
+    width:95vw;
+    margin-top:25px;
+    /* border-color: lightcoral;
+    border-style: solid; */
+    height:6vh;
+}
+.container{
+    width:100vw;
+}
+.dsclogo > img{
+    width:19vh;
+    height:5.5vh;
+    float:right;
+    /* margin-right:60px;
+    margin-top:15px; */
+}
+.applogo{
+    width:98vw;
+    /* border-color: lightcoral;
+    border-style: solid; */
+    text-align: center;
+}
+.applogo > img{
+    width:48vh;
+   /* margin-left:36.5vw;
+   margin-top: 10vh;  */
+}
+.f1{
+    border-radius: 10px;
+    border-style: solid;
+    width:20vw;
+    height: 6.2vh;
+    margin-bottom: 22px;
+    border-width: 1px;
+    border-color: #C8C8C8;
+    padding-left:15px;
+    /* color:rgb(255, 255, 255); */
+}
+.input{
+    text-align: center;
+    /* border-color: lightcoral;
+    border-style: solid; */
+    width:98vw;
+    
+}
+.login{
+    width:20vw;
+    height:8vh;
+    margin-top:50px;
+    border-radius: 10px;
+    border-style: hidden;
+    background-color: #2F54EB;
+    color:white;
+    font-weight: 800;
+    font-stretch: ultra-expanded;
+    cursor: pointer;
+}
+.signup{
+    text-align: center;
+    padding-top: 30px;
+}
+.signup > a{
+    color:#2F54EB;
+    font-weight: 900;
+}
+@media screen and (max-width: 700px){
+
+.dsclogo{
+    text-align: center;
+    width:120vw;
+}
+
+.dsclogo > img{
+    /* margin-top: auto;
+    margin-left: auto; */
+    float:none;
+}
+.applogo{
+    width:117vw;
+}
+.applogo > img{
+    width:48vh; 
+}
+.input{
+    width:117vw;
+}
+.f1{
+    width:75vw;
+    height: 9vh;
+    margin-bottom: 18px;
+}
+.login{
+    width:75vw;
+    height: 9vh;
+    
+}
+
+
+}
