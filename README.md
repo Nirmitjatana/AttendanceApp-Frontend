@@ -8,6 +8,7 @@
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
 [![HitCount](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend.svg)](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend)
 <br>
+
 ## Functionalities
 - [ ] < Progressive Web Application >
 - [ ]  < Real Time Attendence >
