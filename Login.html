@@ -22,15 +22,15 @@
         <p id="message"></p>
     <input class="f1" type="email" name="email" value="" placeholder="Email ID" required><br>
     <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
-    <input class="login" type="submit" value="Login" onsubmit="loader();">
+    <input class="login" type="submit" value="Login" onclick="loader();">
     </form>
     <div class="signup">
     <a  href="signup.html" >Sign Up</a>
     </div>
     </div>
     </div>
-    <div style="padding-left:46vw" id="parent">
-        <div class="boxes" onload="loader();" id="loader">
+    <div style="padding-left:47vw;padding-top:42vh;" id="parent">
+        <div class="boxes" id="loader">
           <div class="box">
               <div></div>
               <div></div>
@@ -55,12 +55,12 @@
               <div></div>
               <div></div>
           </div>
-      </div>
+        </div>
       </div>
       <script>
           function loader(){
               document.getElementById("container").style.display="none"
-              document.getElementById("loader").style.display="inline-block"
+              document.getElementById("loader").style.display="table"
 
           }
       </script>
