@@ -10,7 +10,10 @@ function showPosition(position) {
     longitude = position.coords.longitude;
     }
 getLocation();
-
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
 $(document).ready(function() {
     var socket = io.connect('https://painhost99.herokuapp.com');
     var socket_attendence = io('https://painhost99.herokuapp.com/attendence_namespace')
@@ -20,18 +23,25 @@ $(document).ready(function() {
             socket_attendence.emit('attendence_request', {'otp':$('#myMessage').val(), 'token':localStorage.getItem('token'), 'latitude':latitude, 'longitude':longitude});
             $('#myMessage').val('');
         });
-        socket_attendence.on('attendence_result', function(json) {
-            console.log(json);
-            console.log(json[20,25]);
-        $("#messages").append('<li>'+json+'</li>');
-        // console.log(latitude,longitude)
-		// console.log('Received message on attendence_namespace');
+        socket_attendence.on('attendence_result', function(res) {
+            var obj = JSON.parse(res);
+            console.log(obj)
+            console.log(obj.Status)
+            document.getElementById("messages").innerHTML=(`<div>
+            <p>${obj.Reason}</p>
+        </div>`)
+        // $("#messages").append(
+        //     `<div>
+        //         <p>${obj.Reason}</p>
+        //     </div>`
+        // );
+        
 	    });
         socket_admin.on('admin_listen', function(json) {
             console.log(json);
-            console.log(json.email);
-            console.log(json.datetime);
-            console.log(json.Reason);
+            var obj = JSON.parse(json);
+            // console.log(json.datetime);
+            // console.log(json.Reason);
 		// $("#messages").append('<li>'+json+'</li>');
         // $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
         // Check if it's allowed to broadcast to rooms, if not then don't emit below to room socket else do emit
@@ -40,8 +50,18 @@ $(document).ready(function() {
 	});
     socket_rooms.on('join_room', function(msg) {
         console.log(msg);
+        // $("#messages").append(
+        //     `<div>
+        //         <p>${msg}</p>
+        //     </div>`
+        // );
     });
     socket_rooms.on('leave_room', function(msg) {
         console.log(json);
+        // $("#messages").append(
+        //     `<div>
+        //         <p>${msg}</p>
+        //     </div>`
+        // );
     });
 });
