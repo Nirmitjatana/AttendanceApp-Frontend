@@ -2,7 +2,7 @@
     console.log(localStorage.getItem('token'))
         ca=false;
         ce=true;
-        
+        link=''
         $('.login').click(function (e) {
             console.log('nirmit');
             e.preventDefault();
@@ -25,6 +25,8 @@
             console.log(JSON.stringify(object))
             console.log(ca,ce);
             if (ca & ce) {
+
+                
                 fetch('https://painhost99.herokuapp.com/user/signup', {
                     
                     method: 'POST',
@@ -65,11 +67,17 @@
                         if(errcheck==1){
                         document.getElementById('message').innerHTML = 'User already exist'
                         document.getElementById('message').style.color = "red"
+                        for (let elem of $("#form")) {
+                            elem.reset()
+            }
                         }
                         else if(errcheck==2){
                         document.getElementById('message').innerHTML = 'Server Error'
                         document.getElementById('message').style.color = "red"
                         }
+                        for (let elem of $("#form")) {
+                            elem.reset()
+            }
                         console.log(error)
                     }
                 );
