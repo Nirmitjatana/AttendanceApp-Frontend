@@ -71,11 +71,35 @@
     cursor: pointer;
 }
 
+
+
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_2.gif") center no-repeat #fff;
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 700px){
 
     .dsclogo{
         text-align: center;
-        width:117vw;
+        /* width:117vw; */
+        width:99vw;
     }
     
     .dsclogo > img{
@@ -84,19 +108,21 @@
         float:none;
     }
     .applogo{
-        width:117vw;
+        /* width:117vw; */
+        width:99vw;
     }
     .applogo > img{
         width:48vh; 
     }
     .buttons{
-        width:117vw;
+        /* width:117vw; */
+        width:99vw;
     }
     .createbutton{
-        width:48vw;
+        width:42vw;
     }
     .pastbutton{
-        width:48vw;
+        width:42vw;
     }
     /* #adminshow{
         margin-right:2vw;
