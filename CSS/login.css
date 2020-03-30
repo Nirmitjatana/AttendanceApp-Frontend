@@ -71,6 +71,9 @@
     color:#2F54EB;
     font-weight: 900;
 }
+#loader{
+    display:none;
+}
 @media screen and (max-width: 700px){
 
 .dsclogo{
