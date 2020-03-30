@@ -11,7 +11,10 @@ console.log(localStorage.getItem('token'))
                     output+=`<p>Admin: ${data[0].admin_email}</p>
                             `
                     document.getElementById('adminshow').innerHTML = output;
-                    
                 })
     }
     gettext();
+    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
