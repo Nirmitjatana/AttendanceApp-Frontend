@@ -53,7 +53,9 @@ $(document).ready(function () {
                                 location.href="./Admin/admindashboard.html"
                             }
                             else if(success.admin_status == false){
-                                location.href="./view/otpscreen.html"
+                                // location.href="./view/otpscreen.html"
+                                location.href="./Admin/adminotp.html"
+
                             } 
                             }
                             ).catch(
