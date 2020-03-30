@@ -5,19 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/loader.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Admin|Dashboard</title>
 </head>
 <body>
-    <div class="se-pre-con"></div>
+    
     <div class="dsclogo">
         <img src="../Assets/logo.png" alt="">
     </div>
     <div class="applogo">
         <img src="../Assets/applogo.png" alt="">
     </div>
-    
-    <div class="buttons">
+    <div style="padding-left:48vw">
+        <div class="boxes" onload="loader();" id="loader">
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div>
+      </div>
+    <div class="buttons" id="buttons">
             <button onclick="window.location.href = '../Admin/createevent.html';" class="createbutton">Create Event</button>
 
             <button onclick="window.location.href = './adminotp.html';" class="createbutton">Ongoing Event</button><br>
