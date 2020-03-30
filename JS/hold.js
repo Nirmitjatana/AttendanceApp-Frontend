@@ -33,6 +33,7 @@ function gettext() {
 `
       };
       document.getElementById("accordionExample").innerHTML = output;
+      document.getElementById("loader").style.display = "none"
     //   console.log(output);
     });
  };
