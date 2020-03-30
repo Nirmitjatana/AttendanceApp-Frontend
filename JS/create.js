@@ -6,9 +6,7 @@ function gettext() {
             })
     .then((res) => res.json())
     .then((data) => {
-        otp1=data.otp1;
-        otp2=data.otp2;
-        otp3=data.otp3;
+        console.log(data)
     });
 }
 gettext();
