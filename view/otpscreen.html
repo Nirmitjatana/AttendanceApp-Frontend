@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <style>
-        @media screen and (max-width: 700px){
-.myMessage{
-    width:40vw;
-}
-#attendence_button{
-    width:100vw;
-}
-}
-      </style>
     <title>OTP Screen</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/otp.css">
+    
+    </head>
+    <body>
+      <div class="logos">
+        <div class="applogo">
+            <img src="../Assets/applogo1.png" alt="">
+        </div>
+    </div>
+    
+    <div class="email">
+      <h2>Enter OTP</h2><br>
+    <input type="text" id="myMessage" class="otp"><br>
+    <input id="attendence_button" type="submit" value="Mark Attendance" class="button"><br><br><br>
+    </div>
+    <div id="messages" class="messages">
+    </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -28,24 +34,6 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"
        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
        <script src="../JS/otpscreen.js"></script>
-    </head>
-    <body>
-      <div class="logos">
-        <!-- <div class="dsclogo">
-            <img src="../Assets/logo.png" alt="">
-        </div> -->
-        <div class="applogo">
-            <img src="../Assets/applogo1.png" alt="">
-        </div>
-    </div>
-    
-    <div class="email">
-      <h2>Enter OTP</h2><br>
-    <input type="text" id="myMessage"><br>
-    <input id="attendence_button" type="submit" value="Mark Attendance"><br><br><br>
-    </div>
-    <div id="messages">
-    </div>
     </body>
     </html>
 
