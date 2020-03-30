@@ -37,6 +37,7 @@
     width:98vw;
     text-align: center;
     margin-top:80px;
+    display: none;
     /* border-color: lightcoral;
     border-style: solid; */
 }
