@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/events.css">
+    <link rel="stylesheet" href="../CSS/loader.css">
     <title>Admin|Events</title>
 </head>
 <body>
@@ -31,9 +32,40 @@
       <input class="f1" type="email" name="email" value="" placeholder="Email" required><br>
     </form>
   </div>
+  <div id="message"></div>
+  
     <div class="accordion" id="accordionExample" style="padding-top: 40px;">
         <!-- here data fetched will be shown -->
     </div>
+    <div style="padding-left:48vw">
+    <div class="boxes" onload="loader();" id="loader">
+      <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div>
+  </div>
+
     <script src="../JS/events.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
