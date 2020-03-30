@@ -75,7 +75,8 @@
 
 .dsclogo{
     text-align: center;
-    width:120vw;
+    /* width:120vw; */
+    width:100vw;
 }
 
 .dsclogo > img{
@@ -84,13 +85,15 @@
     float:none;
 }
 .applogo{
-    width:117vw;
+    /* width:117vw; */
+    width:100vw;
 }
 .applogo > img{
     width:48vh; 
 }
 .input{
-    width:117vw;
+    /* width:117vw; */
+    width:100vw;
 }
 .f1{
     width:75vw;
