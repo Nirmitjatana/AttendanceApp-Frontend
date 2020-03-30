@@ -19,9 +19,10 @@ function gettext() {
               <h5>${data[i].event_description}</h5>
               <h5>OTP:${data[i].otp}</h5>
               
-              <h5>${data[i].creation_date}</h5>
+              <h5>${data[i].creation_date.slice(0,10)}</h5>
+              <div id="message_${data[i].otp}"
               <div class="buttons">
-              <button onclick="update('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Start event</button>
+              <button onclick="startevent('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Start event</button>
               
               </div>
 
@@ -59,8 +60,9 @@ function gettext() {
              console.log(object);
             }
     var position;
-    function startevent(object,otp){
+    function startevent(otp){
     console.log(object); 
+    id="message_"+otp;
     fetch('https://painhost99.herokuapp.com/event/start/'+otp,{
                     method: 'POST',
                     crossDomain: true,
@@ -71,7 +73,10 @@ function gettext() {
                     body: JSON.stringify(object)
                 })
                     .then(
+                        
                         success => {
-                            console.log(success)    
+                            console.log(success)
+                            document.getElementById(id).innerHTML = 'Event started'
+                            document.getElementById(id).style.color = "green"    
                             }); 
     }   
