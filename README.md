@@ -9,7 +9,6 @@
 [![HitCount](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend.svg)](http://hits.dwyl.io/Nirmitjatana/attendanceApp-frontend)
 
 <br><br>
-[![buymeacoffee: https://www.buymeacoffee.com/tomquirk](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/tomquirk)
 ## Functionalities
 - [ ] Progressive Web Application 
 - [ ] Real Time Attendence 
