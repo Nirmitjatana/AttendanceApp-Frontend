@@ -49,8 +49,8 @@
     border-radius: 13px;
     width:57vh;
     height:40vh;
-    /* margin:40px;
-    margin-right:40px; */
+    margin:40px;
+    /*margin-right:40px; */
     margin-top: 40px;
     margin-left:-38px;
 }
@@ -94,5 +94,9 @@
     }
     .f1{
         width:60vw;
+    }
+    .carder{
+        width:55vh;
+        height:45vh;
     }
 }
