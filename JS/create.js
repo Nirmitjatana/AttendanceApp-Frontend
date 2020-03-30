@@ -1,3 +1,8 @@
+let otp1;
+let otp2;
+let otp3;
+
+
 function gettext() {
     fetch('https://painhost99.herokuapp.com/random/otp' ,{
             headers: {
@@ -6,7 +11,9 @@ function gettext() {
             })
     .then((res) => res.json())
     .then((data) => {
-    console.log(data)
+        otp1=data.otp1;
+        otp2=data.otp2;
+        otp3=data.otp3;
     });
 }
 gettext();
