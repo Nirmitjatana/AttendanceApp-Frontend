@@ -60,7 +60,7 @@
                         for (let elem of $("#form")) {
                         elem.reset()
                         }
-                        location.href="./view/otpscreen.html"
+                        location.href="../Admin/adminotp.html"
                     }
                 ).catch(
                     error => {

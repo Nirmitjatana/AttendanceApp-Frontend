@@ -36,7 +36,7 @@ $(document).ready(function() {
 		// $("#messages").append('<li>'+json+'</li>');
         // $("#messages").append('<li>'+'upper one recived for admin_namespace'+'</li>');
         // Check if it's allowed to broadcast to rooms, if not then don't emit below to room socket else do emit
-        socket_rooms.emit('join', json);
+        socket_rooms.emit('join', res);
 		// console.log('Received message on admin_namespace');
     });
     
