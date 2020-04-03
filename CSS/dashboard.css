@@ -58,6 +58,17 @@
     cursor: pointer;
     margin-top:7px;
 }
+.logout{
+    width:10vw;
+    height:7vh;
+    float:right;
+    border-style: solid;
+    border-radius: 10px;
+    color:white;
+    cursor: pointer;
+    background-color:#D95071;
+    border-color:#D95071;
+}
 .pastbutton{
     width:14.3vw;
     height:7vh;
@@ -132,5 +143,9 @@
         border-color: lightcoral;
     border-style: solid;
     } */
+    .logout{
+        float: none;
+        width: 50vw;
+    }
     
     }

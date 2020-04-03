@@ -27,7 +27,7 @@
     font-weight: bolder;
 }
 .headingparent{
-    width:99vw;
+    width:98vw;
     text-align: center;
 }
 .f1{
@@ -38,21 +38,30 @@
     height:5.5vh;
     border-radius: 8px;
     padding:5px;
+    
 }
 .email{
-    width:99vw;
+    width:98.7vw;
     text-align: center;
 }
+/* .dad{
+    width:98.7vw;
+    border-style: solid;
+    border-color: lightcoral;
+} */
+/* .accordion{
+    margin:2px auto;
+} */
 .carder{
     border-style: none;
     box-shadow: 2px 2px 4px 4px rgb(214, 213, 213,0.8);
     border-radius: 13px;
-    width:57vh;
+    width:64vh;
     height:40vh;
-    margin:40px;
+    /* margin:40px; */
     /*margin-right:40px; */
-    margin-top: 40px;
-    margin-left:-38px;
+    /* margin-top: 40px; */
+    /* margin-left:-38px; */
 }
 .carder > h2{
     padding:30px;
@@ -69,17 +78,15 @@
     background-color: white;
     color:#2F54EB;
     font-weight: 900;
-    width:20vh;
-    height:8vh;
-    border-radius: 13px;
+    width:17.6vh;
+    height:6vh;
+    border-radius: 10px;
     border-width: 4px;
 }
 .buttons{
     width: 100%;
     text-align: center;
-    margin-top:8vh;
-    
-    
+    margin-top:4vh;
 }
 @media screen and (max-width: 700px){
 
@@ -96,7 +103,9 @@
         width:60vw;
     }
     .carder{
-        width:55vh;
+        width:80vw;
         height:45vh;
+        overflow: hidden;
+        margin-bottom: 20px;
     }
 }
