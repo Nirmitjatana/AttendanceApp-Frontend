@@ -13,23 +13,17 @@ function gettext() {
       let j=data.length;
       for(i=0;i<j;i++){
         output += `
-<div class="carder">
+            <div class="carder">
               
               <h2>${data[i].event_name}</h2>
               <h5>${data[i].event_description}</h5>
               <h5>OTP:${data[i].otp}</h5>
-              
               <h5>${data[i].creation_date.slice(0,10)}</h5>
-              <div id="message_${data[i].otp}"
+              
               <div class="buttons">
               <button onclick="startevent('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Start event</button>
-              
               </div>
-
-
-
-
-          </div>
+            </div>
 `
       };
       document.getElementById("accordionExample").innerHTML = output;

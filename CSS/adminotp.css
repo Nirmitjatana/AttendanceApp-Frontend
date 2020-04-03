@@ -22,6 +22,7 @@
 .email{
     width:99vw;
     text-align: center;
+    padding-top:30px;
 }
 #myMessage{
     border-color:#C8C8C8;
@@ -48,6 +49,26 @@
     text-align: center;
     margin-top:40px;
 }
+.carder{
+    border-style: none;
+    box-shadow: 2px 2px 4px 4px rgb(214, 213, 213,0.8);
+    border-radius: 13px;
+    width:100%;
+    /* height:30vh; */
+    margin-top: 100px;
+}
+.carder > h2{
+    padding:30px;
+    color:#2F54EB;
+    font-weight: 800;
+}
+.accordion{
+    width:70vw;
+    margin:auto auto;
+}
+.accordion > h4{
+    text-align: center;
+}
 @media screen and (max-width: 700px){
 
     #myMessage{
@@ -69,5 +90,9 @@
         font-stretch: ultra-expanded;
         cursor: pointer;
     }
-
+   
+    .accordion{
+        width:20vw;
+        margin:auto auto;
+    }
 }
