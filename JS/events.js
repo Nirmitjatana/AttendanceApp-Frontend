@@ -29,7 +29,7 @@ function gettext() {
               
               <h5>OTP:${data[i].otp}</h5>
               <h5>${data[i].creation_date.slice(0,10)}</h5>
-              <div id="message_${data[i].otp}" style="margin-left:17vh"></div>
+              <div id="message_${data[i].otp}" class="popup"></div>
               <div class="buttons">
               <button onclick="update('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Update</button>
               <button onclick="download('${data[i].otp}')";>Download</button></div>
@@ -47,7 +47,7 @@ function gettext() {
               
               <h5>OTP:${data[i-1].otp}</h5>
               <h5>${data[i-1].creation_date.slice(0,10)}</h5>
-              <div id="message_${data[i-1].otp}" style="margin-left:17vh"></div>
+              <div id="message_${data[i-1].otp}" class="popup"></div>
               <div class="buttons">
               <button onclick="update('${data[i-1].otp}')"; style="color:white;background-color: #2F54EB;">Update</button>
               <button onclick="download('${data[i-1].otp}')";>Download</button>

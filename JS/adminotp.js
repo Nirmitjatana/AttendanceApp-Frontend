@@ -1,4 +1,4 @@
-var latitude;
+    var latitude;
 var longitude;
 function getLocation() {
     if (navigator.geolocation) {
