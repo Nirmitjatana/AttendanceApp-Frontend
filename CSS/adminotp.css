@@ -14,8 +14,8 @@
     margin-top:15px;
 }
 .applogo > img{
-    width:9.4vh;
-    height:5.6vh;
+    width:60px;
+    height:39px;
     margin-left:66px;
     margin-top:25px;
 }
@@ -69,7 +69,20 @@
 .accordion > h4{
     text-align: center;
 }
-@media screen and (max-width: 700px){
+.logout{
+    width:10vw;
+    height:50px;
+    float:right;
+    border-style: solid;
+    border-radius: 10px;
+    color:white;
+    cursor: pointer;
+    background-color:#D95071;
+    border-color:#D95071;
+    margin-right:30px;
+    margin-top:-60px;
+}
+@media screen and (max-width: 600px){
 
     #myMessage{
         
@@ -94,5 +107,18 @@
     .accordion{
         width:20vw;
         margin:auto auto;
+    }
+    .logout{
+        width:200px;
+        height:7vh;
+        float:right;
+        border-style: solid;
+        border-radius: 10px;
+        color:white;
+        cursor: pointer;
+        background-color:#D95071;
+        border-color:#D95071;
+        margin-right:30px;
+        margin-top:-60px;
     }
 }
