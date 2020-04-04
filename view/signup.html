@@ -34,5 +34,12 @@
     <!-- container ends -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script src="../JS/signup.js"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
+            fetch()
+            });
+        });
+</script>
 </body>
 </html>

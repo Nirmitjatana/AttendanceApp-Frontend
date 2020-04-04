@@ -69,5 +69,77 @@
     <!-- container ends -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script src="./JS/login.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+    <!-- recaptcha -->
+<script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
+                fetch()
+                });
+            });
+</script>
+<!-- service worker here -->
+<script>
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+    console.log('Registered!');
+    }, function(err) {
+    console.log('ServiceWorker registration failed: ', err);
+    }).catch(function(err) {
+    console.log(err);
+    });
+    });
+    } else {
+    console.log('service worker is not supported');
+    }
+    </script>
+    <script>
+  self.addEventListener('install', function() {
+    console.log('Install!');
+  });
+  self.addEventListener("activate", event => {
+    console.log('Activate!');
+  });
+  self.addEventListener('fetch', function(event) {
+    console.log('Fetch!', event.request);
+  });
+</script>
+<!-- push notifications -->
+<script>
+    navigator.serviceWorker.ready.then(function(registration) {
+  if (!registration.pushManager) {
+    alert('No push notifications support.');
+    return false;
+  }
+  
+  registration.pushManager.subscribe({
+  userVisibleOnly: true 
+  })
+  .then(function (subscription) {
+  console.log('Subscribed.');
+  })
+  .catch(function (error) {
+  console.log('Subscription error: ', error);
+  });
+})
+
+</script>
+<!-- install prompt -->
+<script>
+    window.addEventListener('beforeinstallprompt', e => {
+  console.log('beforeinstallprompt Event fired');
+  e.preventDefault();
+  
+  this.deferredPrompt = e;
+  return false;
+  });
+
+this.deferredPrompt.prompt();
+  this.deferredPrompt.userChoice.then(choice => {
+  console.log(choice);
+  });
+this.deferredPrompt = null;
+</script>
 </body>
 </html>
