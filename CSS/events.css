@@ -19,6 +19,12 @@
     margin-left:66px;
     margin-top:25px;
 }
+.applogo1 > img{
+    width:9.4vh;
+    height:9.4vh;
+    margin-left:66px;
+    margin-top:25px;
+}
 .heading{
     color:#2F54EB;
     font-weight: bolder;
@@ -93,6 +99,7 @@
     padding:18px;
     font-size: small;
 }
+
 @media screen and (max-width: 700px){
 
     .dsclogo{
@@ -101,8 +108,16 @@
     .applogo{
         display:none;
     }
+    /* .applogo1{
+        border-color: lawngreen;
+        border-style:solid;
+    } */
+    .applogo1 > img{
+        margin-left: 10px;
+        margin-top:8px;
+    }
     .heading{
-        padding-top:100px;
+        padding-top:20px;
     }
     .f1{
         width:60vw;

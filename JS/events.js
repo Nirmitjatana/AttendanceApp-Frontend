@@ -20,13 +20,8 @@ function gettext() {
         <div class="container">
         <div class="row" style="width:87vw; margin: 10px auto;">
           <div class="col-sm" >
-
-
-            
             <div class="carder">
-              
               <h2>${data[i].event_name}</h2>
-              
               <h5>OTP:${data[i].otp}</h5>
               <h5>${data[i].creation_date.slice(0,10)}</h5>
               <div id="message_${data[i].otp}" class="popup"></div>
@@ -34,17 +29,11 @@ function gettext() {
               <button onclick="update('${data[i].otp}')"; style="color:white;background-color: #2F54EB;">Update</button>
               <button onclick="download('${data[i].otp}')";>Download</button></div>
               </div>
-
-
-
-
+            
             </div>
           <div class="col-sm">
-
-
             <div class="carder">
               <h2>${data[i-1].event_name}</h2>
-              
               <h5>OTP:${data[i-1].otp}</h5>
               <h5>${data[i-1].creation_date.slice(0,10)}</h5>
               <div id="message_${data[i-1].otp}" class="popup"></div>
@@ -53,13 +42,9 @@ function gettext() {
               <button onclick="download('${data[i-1].otp}')";>Download</button>
               </div>
               </div>
-
-
-
-
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 `
         }  };
       document.getElementById("accordionExample").innerHTML = output;
@@ -78,7 +63,11 @@ function gettext() {
     //     object[key] = value;
     // });
     function update(otp){
-      let formData = new FormData(form);
+    console.log(otp)
+    // let mail = form.Email.value;
+    // console.log(mail);
+    // f="form_"+otp;
+    let formData = new FormData(form);
     var object = {};
     id="message_"+otp;
     console.log(id)
@@ -86,7 +75,6 @@ function gettext() {
         console.log(value)
         object[key] = value;
     });
-
         object["otp"] = otp;
         console.log(object);
         var email = object.email;

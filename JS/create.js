@@ -9,6 +9,9 @@ function gettext() {
         console.log(data)
     });
 }
+function myFunction() {
+    
+  }
 gettext();
 var latitude;
                 var longitude;
@@ -29,16 +32,14 @@ var latitude;
                     let locationflag=1;
                     $('.submit').click(function (e) {
                         e.preventDefault();
-                        // if (form.event_description.value == "" ||
-                        //     form.event_name.value == "" ||
-                        //     form.ending_time_delta.value == "" ||
-                        //     form.location_range.value == "" ||
-                        //     form.start_event.value == "" ||
-                        //     form.broadcast_choice.value == "" ||
-                        //     form.otp.value == "") {
-                        //     message.innerHTML = 'All fields are required'
-                        //     ca = false;
-                        // }
+                        if (
+                            form.event_name.value == "" ||
+                            form.ending_time_delta.value == "" ||
+                            form.location_range.value == "" ||
+                            form.otp.value == "") {
+                            message.innerHTML = 'All fields are required'
+                            ca = false;
+                        }
                         if(form.startevent==0) {
                             locationflag=0;
                         }
@@ -51,6 +52,20 @@ var latitude;
                         object["latitude"] = latitude;
                         object["longitude"] = longitude;
                         console.log(object)
+                        var checkBox1 = document.getElementById("checkbox1");
+                        var checkBox2 = document.getElementById("checkbox2")
+                        if (checkBox1.checked == true){
+                            object["start_event"] = 1;
+                        } 
+                        else{
+                            object["start_event"] = 0;
+                        }
+                        if (checkBox2.checked == true){
+                            object["broadcast_choice"] = 1;
+                        }
+                        else{
+                            object["broadcast_choice"] = 0;
+                        }
                         if (ca) {
                             fetch('https://painhost99.herokuapp.com/event/set', {
                                 method: 'POST',

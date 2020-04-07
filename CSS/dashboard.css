@@ -23,7 +23,9 @@
     margin-top:15px; */
 }
 .applogo{
-    width:98vw;
+    width:100vw;
+    margin-top:30px;
+    margin-left:-6px;
     /* border-color: lightcoral;
     border-style: solid; */
     text-align: center;
@@ -36,7 +38,7 @@
 .buttons{
     width:98vw;
     text-align: center;
-    margin-top:80px;
+    margin-top:60px;
     display: none;
     /* border-color: lightcoral;
     border-style: solid; */
@@ -82,6 +84,9 @@
     border-width: 5px;
     cursor: pointer;
 }
+.loadplace{
+    padding-left: 47vw;
+}
 
 
 
@@ -93,7 +98,7 @@
 	position: fixed;
 	left: 0px;
 	top: 0px;
-	width: 100%;
+	width: 10%;
 	height: 100%;
 	z-index: 9999;
 	background: url("http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_2.gif") center no-repeat #fff;
@@ -146,6 +151,9 @@
     .logout{
         float: none;
         width: 50vw;
+    }
+    .loadplace{
+        padding-left: 41vw;
     }
     
     }
