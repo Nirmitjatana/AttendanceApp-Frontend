@@ -99,7 +99,18 @@
     padding:18px;
     font-size: small;
 }
-
+#form > button{
+    border-style: solid;
+    border-color: #2F54EB;
+    background-color: white;
+    color:#2F54EB;
+    font-weight: 900;
+    width:120px;
+    height:6vh;
+    border-radius: 10px;
+    border-width: 4px;
+    margin-top:15px;
+}
 @media screen and (max-width: 700px){
 
     .dsclogo{

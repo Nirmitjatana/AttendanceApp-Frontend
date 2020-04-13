@@ -43,6 +43,7 @@
     border-color: #C8C8C8;
     padding-left:15px;
     /* color:rgb(255, 255, 255); */
+    outline: none;
 }
 .input{
     text-align: center;
