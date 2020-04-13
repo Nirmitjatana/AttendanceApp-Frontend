@@ -2,7 +2,8 @@ const cacheName = 'news-v1';
 const staticAssets = [
   './',
   './index.html',
-  './Admin/adminotp.html'
+  './Admin/adminotp.html',
+  './Admin/admindashboard.html'
 ];
 
 self.addEventListener('install', async e => {
