@@ -37,7 +37,8 @@ self.addEventListener('fetch', event => {
           })
         })
       }
-   );
+   )
+    )
   });
 
 async function cacheFirst(req) {
