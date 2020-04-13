@@ -72,15 +72,15 @@
     <script src="./JS/login.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
     <!-- recaptcha -->
-<script>
+<!-- <script>
             grecaptcha.ready(function() {
                 grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
                 fetch()
                 });
             });
-</script>
+</script> -->
 <!-- service worker here -->
-<script>
+<!-- <script>
     if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
     navigator.serviceWorker.register('service-worker.js').then(function(registration) {
@@ -94,20 +94,9 @@
     } else {
     console.log('service worker is not supported');
     }
-    </script>
-    <script>
-  self.addEventListener('install', function() {
-    console.log('Install!');
-  });
-  self.addEventListener("activate", event => {
-    console.log('Activate!');
-  });
-  self.addEventListener('fetch', function(event) {
-    console.log('Fetch!', event.request);
-  });
-</script>
+    </script> -->
 <!-- push notifications -->
-<script>
+<!-- <script>
     navigator.serviceWorker.ready.then(function(registration) {
   if (!registration.pushManager) {
     alert('No push notifications support.');
@@ -124,10 +113,9 @@
   console.log('Subscription error: ', error);
   });
 })
-
-</script>
+</script> -->
 <!-- install prompt -->
-<script>
+<!-- <script>
     window.addEventListener('beforeinstallprompt', e => {
   console.log('beforeinstallprompt Event fired');
   e.preventDefault();
@@ -140,6 +128,6 @@ this.deferredPrompt.prompt();
   console.log(choice);
   });
 this.deferredPrompt = null;
-</script>
+</script> -->
 </body>
 </html>
