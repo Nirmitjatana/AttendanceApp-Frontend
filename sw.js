@@ -26,6 +26,19 @@ self.addEventListener('fetch', async e => {
     e.respondWith(networkAndCache(req));
   }
 });
+self.addEventListener('fetch', event => {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(cache => {
+       return cache.match(event.request).then(response => {
+        return response || fetch(event.request)
+        .then(response => {
+          const responseClone = response.clone();
+          cache.put(event.request, responseClone);
+          })
+        })
+      }
+   );
+  });
 
 async function cacheFirst(req) {
   const cache = await caches.open(cacheName);
