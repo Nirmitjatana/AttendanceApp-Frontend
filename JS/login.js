@@ -1,17 +1,5 @@
-self.addEventListener('fetch', event => {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(cache => {
-       return cache.match(event.request).then(response => {
-        return response || fetch(event.request)
-        .then(response => {
-          const responseClone = response.clone();
-          cache.put(event.request, responseClone);
-          })
-        })
-      }
-   )
-    )
-  });
+ 
+     let checkflag=1;
 $(document).ready(function () {
     registerSW();
             ca=false;
@@ -47,13 +35,20 @@ $(document).ready(function () {
                     .then(function(response) {
                         console.log(response.status);   // Will show you the status
                          if (!response.ok) {
+                             checkflag=1;
                              if(response.status==404){
                                  errcheck=1;
+                                 document.getElementById("container").style.display="table"
+                            document.getElementById("loader").style.display="none"
                              throw new Error("HTTP status " + response.status);
+                            
                             }
                             else if(response.status==401){
                                 errcheck=2;
+                            document.getElementById("container").style.display="table"
+                            document.getElementById("loader").style.display="none"
                              throw new Error("HTTP status " + response.status);
+                            
                             }
                             
                             }return response.json();})
@@ -94,10 +89,15 @@ $(document).ready(function () {
                 }
             })
         })
+        function loader(){
+            document.getElementById("container").style.display="none"
+            document.getElementById("loader").style.display="table"
+        }
         async function registerSW(){
             if ('serviceWorker' in  navigator){
                 try{
                     await navigator.serviceWorker.register('./sw.js');
+                    console.log('registered');
                 }
                 catch (e){
                     console.log('SW registration failed')

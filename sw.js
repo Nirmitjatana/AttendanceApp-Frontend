@@ -1,9 +1,23 @@
-const cacheName = 'news-v1';
+const cacheName = 'attendance-v1';
 const staticAssets = [
   './',
   './index.html',
   './Admin/adminotp.html',
-  './Admin/admindashboard.html'
+  './Admin/admindashboard.html',
+  './Admin/Createdevents.html',
+  './Admin/createevent.html',
+  './Admin/events.html',
+  './CSS/adminotp.css',
+  './CSS/create.css',
+  './CSS/dashboard.css',
+  './CSS/events.css',
+  './CSS/hold.css',
+  './CSS/loader.css',
+  './CSS/login.css',
+  './CSS/otp.css',
+  './CSS/signup.css',
+  './view/otpscreen.html',
+  './view/signup.html'
 ];
 
 self.addEventListener('install', async e => {
@@ -26,21 +40,20 @@ self.addEventListener('fetch', async e => {
     e.respondWith(networkAndCache(req));
   }
 });
-self.addEventListener('fetch', event => {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(cache => {
-       return cache.match(event.request).then(response => {
-        return response || fetch(event.request)
-        .then(response => {
-          const responseClone = response.clone();
-          cache.put(event.request, responseClone);
-          })
-        })
-      }
-   )
-    )
-  });
-
+// self.addEventListener('fetch', event => {
+//     event.respondWith(
+//       caches.open(CACHE_NAME).then(cache => {
+//        return cache.match(event.request).then(response => {
+//         return response || fetch(event.request)
+//         .then(response => {
+//           const responseClone = response.clone();
+//           cache.put(event.request, responseClone);
+//           })
+//         })
+//       }
+//    )
+//     )
+//   }); 
 async function cacheFirst(req) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(req);
