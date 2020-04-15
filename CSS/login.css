@@ -75,12 +75,16 @@
 #loader{
     display:none;
 }
+#parent{
+    padding-left:44vw;
+    padding-top:42vh;
+}
 @media screen and (max-width: 700px){
 
 .dsclogo{
     text-align: center;
     /* width:120vw; */
-    width:100vw;
+    width:97vw;
 }
 
 .dsclogo > img{
@@ -90,14 +94,14 @@
 }
 .applogo{
     /* width:117vw; */
-    width:100vw;
+    width:97vw;
 }
 .applogo > img{
     width:48vh; 
 }
 .input{
     /* width:117vw; */
-    width:100vw;
+    width:97vw;
 }
 .f1{
     width:75vw;
