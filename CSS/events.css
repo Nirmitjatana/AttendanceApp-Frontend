@@ -111,6 +111,23 @@
     border-width: 4px;
     margin-top:15px;
 }
+.applogo1{
+    background-color: #2F54EB;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    margin-left:50px;
+    margin-top:50px;
+    margin-bottom:-70px;
+    cursor: pointer;
+}
+.applogo1 > img{
+    width: 12px;
+    height:15px;
+    margin-left: 9px;
+    margin-top: 5px;
+
+}
 @media screen and (max-width: 700px){
 
     .dsclogo{

@@ -72,11 +72,22 @@
 .mess{
     text-align: center;
 }
+.applogo1{
+    background-color: #2F54EB;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    margin-left:50px;
+    margin-top:50px;
+    margin-bottom:-70px;
+    cursor: pointer;
+}
 .applogo1 > img{
-    width:9.4vh;
-    height:9.4vh;
-    margin-left:66px;
-    margin-top:25px;
+    width: 12px;
+    height:15px;
+    margin-left: 9px;
+    margin-top: 5px;
+
 }
 .loadplace{
     padding-left: 47vw;
