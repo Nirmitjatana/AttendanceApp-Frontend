@@ -1,3 +1,9 @@
+self.addEventListener('install', (e) => {
+  const cache = await caches.open(cacheName);
+  await cache.addAll(staticAssets);
+  return self.skipWaiting();
+});
+
 const cacheName = 'attendance-v1';
 const staticAssets = [
   './',
@@ -20,11 +26,7 @@ const staticAssets = [
   './view/signup.html'
 ];
 
-self.addEventListener('install', async e => {
-  const cache = await caches.open(cacheName);
-  await cache.addAll(staticAssets);
-  return self.skipWaiting();
-});
+
 
 self.addEventListener('activate', e => {
   self.clients.claim();
