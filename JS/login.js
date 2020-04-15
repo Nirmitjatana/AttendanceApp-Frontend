@@ -1,7 +1,14 @@
- 
+if ('serviceWorker' in  navigator){
+    window.addEventListener('load',()=>{
+        navigator.serviceWorker
+        .register('../sw.js')
+        .then(reg => console.log('registered'))
+        .catch(err => console.log(err))
+    })
+}
      let checkflag=1;
 $(document).ready(function () {
-    registerSW();
+    
             ca=false;
             $('.login').click(function (e) {
                 
@@ -93,15 +100,8 @@ $(document).ready(function () {
             document.getElementById("container").style.display="none"
             document.getElementById("loader").style.display="table"
         }
-        async function registerSW(){
-            if ('serviceWorker' in  navigator){
-                try{
-                    await navigator.serviceWorker.register('./sw.js');
-                }
-                catch (e){
-                    console.log('SW registration failed')
-                }
-            }
-        }
+        
+            
+        
 
         
