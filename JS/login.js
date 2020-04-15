@@ -97,7 +97,6 @@ $(document).ready(function () {
             if ('serviceWorker' in  navigator){
                 try{
                     await navigator.serviceWorker.register('./sw.js');
-                    console.log('registered');
                 }
                 catch (e){
                     console.log('SW registration failed')

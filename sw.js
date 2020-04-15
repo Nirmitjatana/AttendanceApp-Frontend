@@ -30,16 +30,16 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// self.addEventListener('fetch', async e => {
-//   const req = e.request;
-//   const url = new URL(req.url);
+self.addEventListener('fetch', async e => {
+  const req = e.request;
+  const url = new URL(req.url);
 
-//   if (url.origin === location.origin) {
-//     e.respondWith(cacheFirst(req));
-//   } else {
-//     e.respondWith(networkAndCache(req));
-//   }
-// });
+  if (url.origin === location.origin) {
+    e.respondWith(cacheFirst(req));
+  } else {
+    e.respondWith(networkAndCache(req));
+  }
+});
 // self.addEventListener('fetch', event => {
 //     event.respondWith(
 //       caches.open(CACHE_NAME).then(cache => {
