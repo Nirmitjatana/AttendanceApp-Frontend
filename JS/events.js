@@ -32,16 +32,16 @@ function button(){
         body: JSON.stringify(object)
     })
     .then(function(response) {
-      console.log(response.status);   // Will show you the status
+      // console.log(response.status);   // Will show you the status
        if (!response.ok) {
            if(response.status==404){
-           document.getElementById(id).innerHTML = 'User does not exist'
-           document.getElementById(id).style.color = "red"
+           document.getElementById("message").innerHTML = 'User does not exist'
+           document.getElementById("message").style.color = "red"
           } 
           }
           else{
-            document.getElementById(id).innerHTML = 'Attendance marked'
-           document.getElementById(id).style.color = "green"
+            document.getElementById("message").innerHTML = 'Attendance marked'
+           document.getElementById("message").style.color = "green"
           }
           return response.json();})
           .then(
@@ -81,7 +81,7 @@ function gettext() {
               <h2>${data[i].event_name}</h2>
               <h5>OTP:${data[i].otp}</h5>
               <h5>${data[i].creation_date.slice(0,10)}</h5>
-              <div id="message_${data[i].otp}" class="popup"></div>
+              
               <div class="buttons">
               <button data-toggle="modal" data-target="#myModal" style="color:white;background-color: #2F54EB;" onclick="clicked('${data[i].otp}');">Update</button>
               <button onclick="download('${data[i].otp}')";>Download</button></div>
@@ -93,7 +93,7 @@ function gettext() {
               <h2>${data[i-1].event_name}</h2>
               <h5>OTP:${data[i-1].otp}</h5>
               <h5>${data[i-1].creation_date.slice(0,10)}</h5>
-              <div id="message_${data[i-1].otp}" class="popup"></div>
+              
               <div class="buttons">
               <button data-toggle="modal" data-target="#myModal" style="color:white;background-color: #2F54EB;" onclick="clicked('${data[i-1].otp}');">Update</button>
               <button onclick="download('${data[i-1].otp}')";>Download</button>
