@@ -23,6 +23,7 @@
     color:#2F54EB;
     font-weight: bolder;
     font-size: 2em;
+    padding-top: 20px;
 }
 .headingparent{
     width:99vw;
@@ -63,7 +64,7 @@
     margin-top:-15px;
     /* margin-top:vh; */
     
-    
+  
 }
 .accordion{
     width:70vw;
@@ -86,14 +87,13 @@
     width: 12px;
     height:15px;
     margin-left: 9px;
-    margin-top: 5px;
+    margin-top: 8px;
 
 }
 .loadplace{
     padding-left: 47vw;
 }
 @media screen and (max-width: 700px){
-
     .dsclogo{
         display:none;
     }
@@ -101,7 +101,7 @@
         display:none;
     }
     .heading{
-        padding-top:20px;
+        padding-top:10px;
     }
     /* .f1{
         width:60vw;
