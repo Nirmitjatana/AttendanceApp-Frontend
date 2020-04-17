@@ -64,6 +64,7 @@ function gettext() {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": localStorage.getItem('token')
+
                     },
                     body: JSON.stringify(object)
                 })

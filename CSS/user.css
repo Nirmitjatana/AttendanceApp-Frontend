@@ -1,0 +1,125 @@
+*{
+    font-family: montserrat;
+    font-stretch: extra-expanded;
+    font-size: 1.02em;
+    /* font-weight:600; */
+    /* color:#C8C8C8; */
+}
+
+.dsclogo > img{
+    width:19vh;
+    height:5.5vh;
+    float:right;
+    margin-right:60px;
+    margin-top:15px;
+}
+.applogo > img{
+    width:9.4vh;
+    height:5.6vh;
+    margin-left:66px;
+    margin-top:25px;
+}
+.heading{
+    color:#2F54EB;
+    font-weight: bolder;
+    font-size: 2em;
+    padding-top: 20px;
+}
+.headingparent{
+    width:99vw;
+    text-align: center;
+}
+.carder{
+    border-style: none;
+    box-shadow: 2px 2px 4px 4px rgb(214, 213, 213,0.8);
+    border-radius: 13px;
+    width:100%;
+    margin-top: 100px;
+}
+.carder > h2{
+    padding-top:20px;
+    padding-left:30px;
+    color:#2F54EB;
+    font-weight: 800;
+}
+.carder > h5{
+    padding-left:30px;
+    color:#2F54EB;
+}
+.buttons > button{
+    border-style: solid;
+    border-color: #2F54EB;
+    background-color: white;
+    color:#2F54EB;
+    font-weight: 900;
+    
+    height:8vh;
+    border-radius: 13px;
+    border-width: 4px;
+}
+.buttons{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top:-15px;
+    /* margin-top:vh; */
+    
+  
+}
+.accordion{
+    width:70vw;
+    margin:auto auto;
+}
+.mess{
+    text-align: center;
+}
+.applogo1{
+    background-color: #2F54EB;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    margin-left:50px;
+    margin-top:50px;
+    margin-bottom:-70px;
+    cursor: pointer;
+}
+.applogo1 > img{
+    width: 12px;
+    height:15px;
+    margin-left: 9px;
+    margin-top: 8px;
+
+}
+.loadplace{
+    padding-left: 47vw;
+}
+.userbutton{
+    margin:40px;
+    padding-left: 20px;
+    padding-right:20px;
+    /* width:500px; */
+}
+.carder > h2{
+    font-size: 1.3em;
+}
+@media screen and (max-width: 700px){
+    .dsclogo{
+        display:none;
+    }
+    .applogo{
+        margin-left:-40px;
+    }
+    .heading{
+        padding-top:10px;
+    }
+    /* .f1{
+        width:60vw;
+    } */
+    .applogo1 > img{
+        margin-left: 10px;
+        margin-top:8px;
+    }
+    .loadplace{
+        padding-left: 41vw;
+    }
+}
