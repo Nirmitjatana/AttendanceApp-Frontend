@@ -20,9 +20,9 @@ function gettext() {
             })
     .then((res) => res.json())
     .then((data) => {
-        console.log(data);
-        console.log(Object.entries(data))
-        console.log(Object.entries(data)[0][0])
+        // console.log(data);
+        // console.log(Object.entries(data))
+        // console.log(Object.entries(data)[0][0])
       let output = '';
       let i;
       let j=Object.entries(data).length
@@ -55,8 +55,8 @@ $(document).ready(function() {
         });
         socket_attendence.on('attendence_result', function(res) {
             var obj = JSON.parse(res);
-            console.log(obj)
-            console.log(obj.Status)
+            // console.log(obj)
+            // console.log(obj.Status)
             document.getElementById("messages").innerHTML=(`<div>
             <p>${obj.Reason}</p>
             </div>`)

@@ -25,10 +25,10 @@ $(document).ready(function () {
                 let formData = new FormData(form);
                 var object = {};
                 formData.forEach(function (value, key) {
-                    console.log(value)
+                    // console.log(value)
                     object[key] = value;
                 });
-                console.log(JSON.stringify(object))
+                // console.log(JSON.stringify(object))
                 if (ca) {
                     fetch('https://painhost99.herokuapp.com/user/login', {
                         method: 'POST',

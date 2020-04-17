@@ -107,7 +107,7 @@ function gettext() {
       document.getElementById("accordionExample").innerHTML = output;
       document.getElementById("loader").style.display = "none"
     //   console.log(data.event_name[2]);
-    console.log(data[0].event_name)
+    // console.log(data[0].event_name)
        });
       };
       gettext();
@@ -121,7 +121,7 @@ function gettext() {
     // });
  
     function download(otp) {
-      console.log(otp);
+      // console.log(otp);
     fetch('https://painhost99.herokuapp.com/download/'+otp ,{
             headers: {
                 'Content-Type': 'text/csv',
@@ -251,7 +251,7 @@ function gettext() {
 
 
 
-      console.log(data)
+      // console.log(data)
 
       var monthArray = data.split("\n");
 
@@ -261,7 +261,7 @@ function gettext() {
               monthArray2d[i] = monthArray[i].split(",");}
 
 
-            console.log(monthArray2d)
+            // console.log(monthArray2d)
 
 
       // var ar = data.split(',');
@@ -272,7 +272,7 @@ function gettext() {
                 csv += row.join(',');
                 csv += "\n";
         });
-        console.log(csv);
+        // console.log(csv);
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
         hiddenElement.target = '_blank';

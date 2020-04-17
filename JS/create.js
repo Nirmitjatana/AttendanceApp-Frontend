@@ -6,7 +6,7 @@ function gettext() {
             })
     .then((res) => res.json())
     .then((data) => {
-        console.log(data)
+        // console.log(data)
     });
 }
 function myFunction() {
@@ -51,7 +51,7 @@ var latitude;
                         });
                         object["latitude"] = latitude;
                         object["longitude"] = longitude;
-                        console.log(object)
+                        // console.log(object)
                         var checkBox1 = document.getElementById("checkbox1");
                         var checkBox2 = document.getElementById("checkbox2")
                         if (checkBox1.checked == true){
@@ -77,7 +77,7 @@ var latitude;
                                 body: JSON.stringify(object)
                             })
                                 .then(function (response) {
-                                    console.log(response.status);   // Will show you the status
+                                    // console.log(response.status);   // Will show you the status
                                     if (!response.ok) {
                                         if (response.status == 500) {
                                             errcheck = 1;
@@ -99,7 +99,7 @@ var latitude;
                                 })
                                 .then(
                                     success => {
-                                        console.log(success)
+                                        // console.log(success)
                                         document.getElementById('message').innerHTML = 'Event created'
                                         document.getElementById('message').style.color = "green"
                                         if(locationflag==0){

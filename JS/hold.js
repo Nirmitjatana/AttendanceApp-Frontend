@@ -6,7 +6,7 @@ function gettext() {
             })
     .then((res) => res.json())
     .then((data) => {
-        console.log(data);
+        // console.log(data);
         localStorage.setItem('data',data);
       let output = '';
       let i;
@@ -43,7 +43,7 @@ function gettext() {
                 function showPosition(position) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
-                console.log(latitude);
+                // console.log(latitude);
                 createobject();
                     }
                     getLocation();
@@ -52,11 +52,11 @@ function gettext() {
             object["latitude"] = latitude;
             object["longitude"] = longitude;
             object["start_event"] = 1;
-             console.log(object);
+            //  console.log(object);
             }
     var position;
     function startevent(otp,id){
-    console.log(object); 
+    // console.log(object); 
     id="message_"+otp;
     fetch('https://painhost99.herokuapp.com/event/start/'+otp,{
                     method: 'POST',
@@ -70,7 +70,7 @@ function gettext() {
                     .then(
                         
                         success => {
-                            console.log(success)
+                            // console.log(success)
                             document.getElementById(id).innerHTML = 'Event started'
                             document.getElementById(id).style.color = "green"    
                             }); 

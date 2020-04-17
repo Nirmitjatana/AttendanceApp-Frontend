@@ -1,4 +1,4 @@
-console.log(localStorage.getItem('token'))
+// console.log(localStorage.getItem('token'))
     function gettext() {
                 fetch('https://painhost99.herokuapp.com/events/info' ,{
                         headers: {
