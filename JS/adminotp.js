@@ -1,4 +1,4 @@
-    var latitude;
+var latitude;
 var longitude;
 function getLocation() {
     if (navigator.geolocation) {
@@ -13,7 +13,7 @@ getLocation();
 
 
 function gettext() {
-    fetch('https:/painhost99.herokuapp.com/events/ongoing' ,{
+    fetch('https://painhost99.herokuapp.com/events/ongoing',{
             headers: {
                 'Content-Type': 'application/json'
             },
