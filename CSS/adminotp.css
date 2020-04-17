@@ -81,17 +81,17 @@
     margin-right:30px;
     margin-top:-60px;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
 
     #myMessage{
         
-        width:40vw;
+        width:280px;
         height:5.5vh;
         border-radius: 8px;
         padding:5px;
     } 
     #attendence_button{
-        width:20.9vw;
+        width:200px;
         height:8vh;
         margin-top:50px;
         border-radius: 10px;
@@ -104,7 +104,7 @@
     }
    
     .accordion{
-        width:20vw;
+        width:80vw;
         margin:auto auto;
     }
     .logout{
@@ -119,5 +119,23 @@
         border-color:#D95071;
         margin-right:30px;
         margin-top:-60px;
+    }
+    .applogo > img{
+        width:60px;
+        height:39px;
+        margin-left:30px;
+        margin-top:25px;
+    }
+    .logout{
+        height:50px;
+        float:right;
+        border-style: solid;
+        border-radius: 10px;
+        color:white;
+        cursor: pointer;
+        background-color:#D95071;
+        border-color:#D95071;
+        margin-right:30px;
+        margin-top:-48px;
     }
 }
