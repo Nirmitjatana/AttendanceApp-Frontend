@@ -70,7 +70,7 @@ $(document).ready(function () {
                             }
                             else if(success.admin_status == false){
                                 // location.href="./view/otpscreen.html"
-                                location.href="./Admin/adminotp.html"
+                                location.href="./view/userongoing.html"
 
                             } 
                             }
