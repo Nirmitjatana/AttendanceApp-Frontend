@@ -20,8 +20,8 @@ const staticAssets = [
   './view/signup.html'
 ];
 
-self.addEventListener('install', (e) => {
-  const cache = caches.open(cacheName);
+self.addEventListener('install', async e => {
+  const cache = await caches.open(cacheName);
 await cache.addAll(staticAssets);
   return self.skipWaiting();
 });
