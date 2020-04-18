@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./CSS/loader.css">
     <title>AttendanceApp|Login</title>
     <link rel="manifest" href="./manifest.webmanifest">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
 </head>
 <body>
     <div class="container" id="container">
@@ -62,10 +63,26 @@
         </div>
       </div>
     <!-- container ends -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script src="./JS/login.js"></script>
-    <!-- <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script> -->
+    
     <!-- recaptcha -->
+
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
+            .then(function(token) {
+                console.log(token)
+            });
+        });
+        </script>
+        
+    <!-- <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'});
+        });
+        </script> -->
 <!-- <script>
             grecaptcha.ready(function() {
                 grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {

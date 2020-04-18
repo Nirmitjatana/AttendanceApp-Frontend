@@ -73,7 +73,7 @@ $(document).ready(function () {
                             localStorage.setItem('token',success.auth_token);
                             // console.log(localStorage.getItem('token'))
                             if(success.admin_status == true){
-                                location.href="./Admin/admindashboard.html",
+                                location.href="./Admin/admindashboard.html";
 
                             }
                             else if(success.admin_status == false){
