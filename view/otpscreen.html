@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <title>OTP Screen</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../CSS/otp.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>OTP screen</title>
     <link rel="manifest" href="/manifest.webmanifest">
-    </head>
+</head>
     <body>
       <div class="logos">
         <div class="applogo">
             <img src="../Assets/applogo1.png" alt="">
         </div>
+        <div class="dsclogo">
+          <button onclick="window.location.href = '../index.html';" class="logout">Log out!</button>
+      </div>
     </div>
-    
+    <!-- <div class="accordion" id="accordionExample">
+      <h4>No ongoing events</h4>
+      </div> -->
     <div class="email">
-      <h2>Enter OTP</h2><br>
+      <label>Enter OTP</label><br>
     <input type="text" id="myMessage" class="otp"><br>
-    <input id="attendence_button" type="submit" value="Mark Attendance" class="button"><br><br><br>
+    <input id="attendence_button" type="submit" value="Mark Attendance" class="button">
     </div>
     <div id="messages" class="messages">
     </div>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -36,6 +45,3 @@
        <script src="../JS/otpscreen.js"></script>
     </body>
     </html>
-
-
-

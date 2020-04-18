@@ -30,7 +30,7 @@ $(document).ready(function () {
                 });
                 // console.log(JSON.stringify(object))
                 if (ca) {
-                    fetch('https://painhost99.herokuapp.com/user/login', {
+                    fetch('https://painhost99.herokuapp.com/admin/login', {
                         method: 'POST',
                         crossDomain: true,
                         headers: {
@@ -73,14 +73,8 @@ $(document).ready(function () {
                             localStorage.setItem('token',success.auth_token);
                             // console.log(localStorage.getItem('token'))
                             if(success.admin_status == true){
-                                location.href="./Admin/admindashboard.html",
-
+                                location.href="./Admin/admindashboard.html"
                             }
-                            else if(success.admin_status == false){
-                                // location.href="./view/otpscreen.html"
-                                location.href="./view/userongoing.html"
-
-                            } 
                             }
                             ).catch(
                             error => {
@@ -115,8 +109,3 @@ $(document).ready(function () {
             document.getElementById("container").style.display="none"
             document.getElementById("loader").style.display="table"
         }
-        
-            
-        
-
-        

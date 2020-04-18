@@ -17,7 +17,7 @@ function gettext() {
               <h2>${Object.entries(data)[i][0]}</h2>
               <h5>${Object.entries(data)[i][1]}</h5>
               <div class="buttons">
-              <button onclick="window.location.href = '../Admin/adminotp.html';" style="color:white;background-color: #2F54EB;" class="userbutton">Mark Attendance</button>
+              <button onclick="window.location.href = '../view/otpscreen.html';" style="color:white;background-color: #2F54EB;" class="userbutton">Mark Attendance</button>
               </div>
           </div>
 `
