@@ -8,6 +8,7 @@ const staticAssets = [
   './Admin/Createdevents.html',
   './Admin/createevent.html',
   './Admin/events.html',
+  './Admin/adminsignup.html',
   './CSS/adminotp.css',
   './CSS/create.css',
   './CSS/dashboard.css',
@@ -20,7 +21,18 @@ const staticAssets = [
   './CSS/user.css',
   './view/otpscreen.html',
   './view/userongoing.html',
-  './view/signup.html'
+  './view/signup.html',
+  './JS/admin.js',
+  './JS/adminotp.js',
+  './JS/adminsignup.js',
+  './JS/create.js',
+  './JS/dashboard.js',
+  './JS/events.js',
+  './JS/hold.js',
+  './JS/login.js',
+  './JS/otpscreen.js',
+  './JS/signup.js',
+  './JS/user.js',
 ];
 self.addEventListener('install', async e => {
   const cache = await caches.open(cacheName);

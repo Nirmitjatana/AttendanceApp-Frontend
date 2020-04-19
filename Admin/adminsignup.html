@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/signup.css">
+    <title>AttendanceApp|Signup</title>
+    <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+    <div class="container">
+    <div class="dsclogo">
+        <img src="../Assets/logo.png" alt="">
+    </div>
+    <div class="applogo">
+        <img src="../Assets/applogo.png" alt="">
+    </div>
+    <div class="input">
+    <form id="form">
+        <p id="message"></p>
+    <input class="f1" type="name" name="username" value="" placeholder="Username" required><br>
+    <input class="f1" type="email" name="email" value="" placeholder="Email ID" required><br>
+    <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
+    <input class="login" type="submit" value="Sign up">
+    </form>
+    </div>
+    <div class="signup">
+        <a  href="../admin.html">Login</a>
+    </div>
+
+    <!-- input ends -->
+    </div>
+    <!-- container ends -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
+    <script src="../JS/adminsignup.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
+            .then(function(token) {
+                localStorage.setItem('captcha',token);
+            });
+        });
+        </script>
+</body>
+</html>
