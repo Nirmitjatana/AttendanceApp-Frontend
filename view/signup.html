@@ -35,12 +35,14 @@
     <!-- container ends -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script src="../JS/signup.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
     <script>
         grecaptcha.ready(function() {
-            grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
-            fetch()
+            grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
+            .then(function(token) {
+                localStorage.setItem('captcha',token);
             });
         });
-</script>
+        </script>
 </body>
 </html>

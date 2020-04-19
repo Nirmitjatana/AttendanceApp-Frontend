@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#2F54EB"/>
+    <link rel="apple-touch-icon" href="./Assets/applogo1.png">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" href="./Assets/applogo1.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="./CSS/login.css">
@@ -63,17 +65,17 @@
         </div>
       </div>
     <!-- container ends -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
     <script src="./JS/login.js"></script>
     
     <!-- recaptcha -->
-
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
     <script>
         grecaptcha.ready(function() {
             grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
             .then(function(token) {
-                console.log(token)
+                localStorage.setItem('captcha',token);
             });
         });
         </script>

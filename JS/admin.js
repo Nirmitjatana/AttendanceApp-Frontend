@@ -28,6 +28,7 @@ $(document).ready(function () {
                     // console.log(value)
                     object[key] = value;
                 });
+                object["g-recaptcha-response"]=localStorage.getItem("captcha");
                 // console.log(JSON.stringify(object))
                 if (ca) {
                     fetch('https://painhost99.herokuapp.com/admin/login', {

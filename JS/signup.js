@@ -22,8 +22,9 @@
                 console.log(value)
                 object[key] = value;
             });
-            console.log(JSON.stringify(object))
-            console.log(ca,ce);
+            object["g-recaptcha-response"]=localStorage.getItem("captcha");
+            // console.log(JSON.stringify(object))
+            // console.log(ca,ce);
             if (ca & ce) {
 
                 
@@ -37,8 +38,8 @@
                     body: JSON.stringify(object)
                 })
                 .then(function(response) {
-                    console.log("nirmit");
-                    console.log(response.status);
+                    // console.log("nirmit");
+                    // console.log(response.status);
                      // Will show you the status
                          if(response.status==208){
                              errcheck=1;
