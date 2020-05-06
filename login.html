@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#2F54EB"/>
+    <link rel="apple-touch-icon" href="./Assets/applogo1.jpeg">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="icon" href="./Assets/applogo1.jpeg" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
+    <title>AttendanceApp|Login</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
+</head>
+<body>
+    <div class="container" id="container">
+
+    <div class="dsclogo">
+        <img src="./Assets/logo.png" alt="">
+    </div><br>
+    <div class="applogo">
+        <img src="./Assets/applogo.jpeg" alt="">
+    </div>
+    <div class="input">
+    <form id="form">
+        <p id="message"></p>
+    <input class="f1" type="email" name="email" value="" placeholder="Email ID" required><br>
+    <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
+    <input class="login" type="submit" value="Login" onclick="loader();">
+    </form>
+    <div class="signup">
+    <a  href="./view/signup.html">Sign Up</a>
+    </div>
+    </div>
+    </div>
+    <div id="parent">
+        <div class="boxes" id="loader">
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+        </div>
+      </div>
+    <!-- container ends -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
+    <script src="./JS/login.js"></script>
+    
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
+            .then(function(token) {
+                localStorage.setItem('captcha',token);
+            });
+        });
+        </script>
+        
+    
+</body>
+</html>
