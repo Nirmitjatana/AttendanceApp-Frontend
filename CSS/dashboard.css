@@ -24,7 +24,7 @@
 }
 .applogo{
     width:100vw;
-    margin-top:30px;
+    /* margin-top:30px; */
     margin-left:-6px;
     /* border-color: lightcoral;
     border-style: solid; */
@@ -38,7 +38,7 @@
 .buttons{
     width:98vw;
     text-align: center;
-    margin-top:60px;
+    /* margin-top:60px; */
     display: none;
     /* border-color: lightcoral;
     border-style: solid; */
