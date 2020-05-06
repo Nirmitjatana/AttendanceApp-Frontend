@@ -1,0 +1,93 @@
+*{
+    font-family: 'montserrat';
+}
+.dsclogo > img{
+    width:150px;
+}
+.dsclogo{
+    text-align: center;
+    margin-top:40px;
+}
+.applogo > img{
+    width:35vw;
+}
+.applogo{
+    text-align: center;
+}
+.buttons{
+    text-align: center;
+}
+.buttons > button{
+    margin-left:30px;
+    margin-right:30px;
+    width:190px;
+    height:50px;
+    font-family: 'montserrat';
+    border-radius: 9px;
+    border-style:solid;
+    border-color: #2874f0;
+    border-width: 6px;
+    font-size: 22px;
+    font-weight: bolder;
+    background-color: white;
+    color: #2874f0;
+    outline:none;
+    cursor: pointer;
+}
+.buttons > .adminbutton{
+    background-color: #2874f0;
+    color: white;
+}
+.arrow{
+    text-align: center;
+}
+.arrow > img{
+    width:20px;
+    height:25px;
+    margin-top:50px;
+}
+.content{
+    margin:30px;
+}
+.heading{
+    font-size: 30px;
+    font-weight: 900;
+    color: #2874f0;
+    margin:30px 0px;
+}
+.subheading{
+    text-align: center;
+    font-size: 20px;
+}
+.subheading1{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+.card{
+    text-align: left;
+    font-size: 18px;
+    /* border-style: outset; */
+    /* border-style: solid; */
+    border-color: rgb(211, 211, 211);
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding:26px;
+    margin:40px 0px;
+}
+.card > h2{
+    color:#2874f0;
+    margin-top:0px;
+    font-weight: 600;
+}
+@media screen and (max-width: 760px){
+    /* .arrow{
+        display:none;
+    } */
+    .applogo > img{
+        width:95vw;
+    }
+    .buttons > button{
+        margin:15px 10px;
+    }
+}
