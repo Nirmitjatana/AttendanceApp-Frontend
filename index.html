@@ -5,142 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#2F54EB"/>
-    <link rel="apple-touch-icon" href="./Assets/applogo1.png">
+    <link rel="apple-touch-icon" href="./Assets/applogo1.jpeg">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="icon" href="./Assets/applogo1.png" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="./CSS/login.css">
-    <link rel="stylesheet" href="./CSS/loader.css">
+    <link rel="icon" href="./Assets/applogo1.jpeg" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="./CSS/landing.css">
     <title>AttendanceApp|Login</title>
     <link rel="manifest" href="./manifest.webmanifest">
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
 </head>
 <body>
-    <div class="container" id="container">
-
     <div class="dsclogo">
         <img src="./Assets/logo.png" alt="">
-    </div><br>
+    </div>
     <div class="applogo">
-        <img src="./Assets/applogo.png" alt="">
+        <img src="./Assets/applogo.jpeg" alt="">
     </div>
-    <div class="input">
-    <form id="form">
-        <p id="message"></p>
-    <input class="f1" type="email" name="email" value="" placeholder="Email ID" required><br>
-    <input class="f1" type="password" name="password" value="" placeholder="Password" required><br>
-    <input class="login" type="submit" value="Login" onclick="loader();">
-
-    </form>
-    <div class="signup">
-    <a  href="./view/signup.html">Sign Up</a>
+    <div class="buttons">
+        <button onclick="window.location.href = './login.html';">User</button>
+        <button class="adminbutton" onclick="window.location.href = '../admin.html';">Admin</button>
+    </div>
+    <div class="arrow">
+        <img src="./Assets/Icon awesome-angle-double-down.png" alt="">
+    </div>
+    <div class="content">
+    <div class="heading">
+        What is Quorum?
+    </div>
+    <div class="subheading">
+        Sed a magna semper, porta purus eu, ullamcorper ligula. Nam sit amet consectetur sapien. Etiam dui ipsum, viverra vel turpis ut, dignissim elementum mauris. Sed dapibus auctor scelerisque. Aenean at leo tellus. Morbi eu leo sapien. Fusce libero dolor, venenatis eget enim sed, commodo efficitur arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce justo ipsum, placerat vitae erat ac, porttitor tincidunt lacus. In fermentum nulla nec fermentum tempus.
+    </div>
+    <div class="heading">
+        Features
+    </div>
+    <div class="card">
+        <h2>Title</h2>
+        Sed a magna semper, porta purus eu, ullamcorper ligula. Nam sit amet consectetur sapien. Etiam dui ipsum, viverra vel turpis ut, dignissim elementum mauris. Sed dapibus auctor scelerisque. Aenean at leo tellus. Morbi eu leo sapien. Fusce libero dolor, venenatis eget enim sed, commodo efficitur arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce justo ipsum, placerat vitae erat ac, porttitor tincidunt lacus. In fermentum nulla nec fermentum tempus.
+    </div>
+    <div class="card">
+        <h2>Title</h2>
+        Sed a magna semper, porta purus eu, ullamcorper ligula. Nam sit amet consectetur sapien. Etiam dui ipsum, viverra vel turpis ut, dignissim elementum mauris. Sed dapibus auctor scelerisque. Aenean at leo tellus. Morbi eu leo sapien. Fusce libero dolor, venenatis eget enim sed, commodo efficitur arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce justo ipsum, placerat vitae erat ac, porttitor tincidunt lacus. In fermentum nulla nec fermentum tempus.
+    </div>
+    <div class="heading">
+        Contact Us
+    </div>
+    <div class="subheading1">
+        We are all ears for any suggestions and feedback that you might have for us. Please reach out to us on <a href="dscvit@gmail.com">Quorum.dscvit@gmail.com</a> for anything you want to say.
     </div>
     </div>
-    </div>
-    <div id="parent">
-        <div class="boxes" id="loader">
-          <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-          <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-          <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-          <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-        </div>
-      </div>
-    <!-- container ends -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" sync></script>
-    <script src="./JS/login.js"></script>
-    
-    <!-- recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c"></script>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6Lcbz9YUAAAAAEV4Ist-t9NbDVWG3esXmbGHSX4c', {action: 'login'})
-            .then(function(token) {
-                localStorage.setItem('captcha',token);
-            });
-        });
-        </script>
-        
-    <!-- <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'});
-        });
-        </script> -->
-<!-- <script>
-            grecaptcha.ready(function() {
-                grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
-                fetch()
-                });
-            });
-</script> -->
-<!-- service worker here -->
-<!-- <script>
-    if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-    console.log('Registered!');
-    }, function(err) {
-    console.log('ServiceWorker registration failed: ', err);
-    }).catch(function(err) {
-    console.log(err);
-    });
-    });
-    } else {
-    console.log('service worker is not supported');
-    }
-    </script> -->
-<!-- push notifications -->
-<!-- <script>
-    navigator.serviceWorker.ready.then(function(registration) {
-  if (!registration.pushManager) {
-    alert('No push notifications support.');
-    return false;
-  }
-  
-  registration.pushManager.subscribe({
-  userVisibleOnly: true 
-  })
-  .then(function (subscription) {
-  console.log('Subscribed.');
-  })
-  .catch(function (error) {
-  console.log('Subscription error: ', error);
-  });
-})
-</script> -->
-<!-- install prompt -->
-<!-- <script>
-    window.addEventListener('beforeinstallprompt', e => {
-  console.log('beforeinstallprompt Event fired');
-  e.preventDefault();
-  
-  this.deferredPrompt = e;
-  return false;
-  });
-this.deferredPrompt.prompt();
-  this.deferredPrompt.userChoice.then(choice => {
-  console.log(choice);
-  });
-this.deferredPrompt = null;
-</script> -->
 </body>
 </html>
