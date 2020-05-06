@@ -4,6 +4,7 @@
     font-size: 1.02em;
     /* font-weight:600; */
     /* color:#C8C8C8; */
+    /* scrollbar-color: #2F54EB; */
 }
 .dsclogo{
     width:95vw;
@@ -13,7 +14,7 @@
     height:6vh;
 }
 .container{
-    width:100vw;
+    width:98vw;
 }
 .dsclogo > img{
     width:19vh;
@@ -29,7 +30,7 @@
     text-align: center;
 }
 .applogo > img{
-    width:48vh;
+    width:300px;
    /* margin-left:36.5vw;
    margin-top: 10vh;  */
 }
@@ -97,7 +98,7 @@
     width:97vw;
 }
 .applogo > img{
-    width:48vh; 
+    width:300px; 
 }
 .input{
     /* width:117vw; */
