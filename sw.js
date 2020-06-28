@@ -34,6 +34,7 @@ const staticAssets = [
   './JS/signup.js',
   './JS/user.js',
 ];
+var self = this;
 self.addEventListener('install', async e => {
   const cache = await caches.open(cacheName);
   await cache.addAll(staticAssets);
